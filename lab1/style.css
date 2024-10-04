@@ -1,0 +1,71 @@
+/* simple CSS reset */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+/* img {
+    max-width: 100%;
+    height: auto;
+} */
+
+/* styles */
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 100vh;
+}
+.menu {
+    display: flex;
+    width: 100%;
+}
+
+.menu li {
+    list-style: none;
+    flex-grow: 1;
+    border: 1px red solid;
+    padding: 1vh;
+    text-align: center;
+} 
+
+.menu li:hover {
+    background: red;
+}
+
+.form-cnt {
+    border: 1px red solid;
+    border-radius: 10px;
+    background: green;
+    padding: 1vw;
+}
+
+#use-cases img {
+    width: 50vw;
+}
+
+form, .form-fields {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    background: gray;
+    height: 20vh;
+}
