@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="pl" />
+    <meta name="Author" content="Dawid Koterwas" />
+    <title>Machine Learning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="container">
+    <header class="main-header">
+        <h1 class="site-title"><a href="index.html">Machine Learning</a></h1>
+        <nav class="main-nav">
+            <ul class="menu">
+                <li><a href="dl.html">Deep Learning</a></li>
+                <li><a href="nlp.html">NLP</a></li>
+                <li><a href="cv.html">Computer Vision</a></li>
+                <li><a href="rl.html">Reinforcement Learning</a></li>
+                <li><a href="etyka.html">Etyka AI</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="content">
+        <h2 class="section-title">Etyka Sztucznej Inteligencji (AI)</h2>
+        <p>Sztuczna inteligencja (AI) staje się coraz bardziej integralną częścią naszego codziennego życia, od
+            autonomicznych pojazdów po zaawansowane systemy         rekomendacji i chatboty. Jednak wraz z rosnącym wpływem AI
+            pojawiają się także poważne wyzwania etyczne. Etyka AI to dziedzina badań, która bada moralne i etyczne
+            aspekty rozwoju oraz zastosowania technologii AI, szczególnie tam, gdzie jej działanie ma wpływ na życie
+            ludzkie i społeczne struktury.</p>
+        <p>W tej sekcji omówimy główne kwestie związane z etyką AI, w tym zagadnienia takie jak uprzedzenia
+            algorytmiczne, prywatność, odpowiedzialność, wyjaśnialność oraz etyczne użycie AI w różnych dziedzinach
+            życia.</p>
+
+        <h3>Uprzedzenia Algorytmiczne</h3>
+        <p>Jednym z największych wyzwań w dziedzinie etyki AI jest kwestia uprzedzeń (ang. bias) w algorytmach.
+            Algorytmy uczą się na podstawie danych, a jeśli te dane są niekompletne, stronnicze lub odzwierciedlają
+            nierówności społeczne, to AI może podtrzymywać lub nawet pogłębiać te uprzedzenia. Może to prowadzić do
+            dyskryminacji w różnych obszarach, takich jak:</p>
+        <ul>
+            <li><strong>Rekrutacja:</strong> Algorytmy stosowane w procesie rekrutacji mogą faworyzować kandydatów z
+                określonych grup społecznych, jeśli uczą się na historycznie stronniczych danych.</li>
+            <li><strong>Systemy sprawiedliwości:</strong> Algorytmy stosowane w sądownictwie, na przykład do
+                prognozowania ryzyka przestępczości, mogą niesprawiedliwie traktować mniejszości, jeśli są trenowane na
+                stronniczych danych.</li>
+            <li><strong>Usługi finansowe:</strong> AI używana do oceny zdolności kredytowej może dyskryminować osoby z
+                określonych grup etnicznych lub ekonomicznych.</li>
+        </ul>
+        <p>Rozwiązaniem problemu uprzedzeń w AI jest dbanie o transparentność i różnorodność danych oraz testowanie
+            modeli pod kątem stronniczości. Ważne jest także rozwijanie metodologii, które mogą zredukować wpływ tych
+            uprzedzeń.</p>
+
+        <h3>Prywatność i Zbieranie Danych</h3>
+        <p>Sztuczna inteligencja, szczególnie w kontekście machine learning i deep learning, wymaga dużych ilości
+            danych, aby móc skutecznie działać. Jednak masowe gromadzenie danych rodzi pytania o prywatność i ochronę
+            danych osobowych. W erze cyfrowej, gdzie dane są nowym "złotem", coraz trudniej jest chronić prywatność
+            użytkowników.</p>
+        <p>Główne obawy związane z prywatnością dotyczą:</p>
+        <ul>
+            <li><strong>Zbierania danych bez zgody:</strong> Systemy AI mogą zbierać dane użytkowników bez ich wyraźnej
+                zgody, co może prowadzić do nadużyć i naruszeń prywatności.</li>
+            <li><strong>Nadużycia danych:</strong> Zgromadzone dane mogą być wykorzystane w sposób niezgodny z
+                oczekiwaniami użytkowników, na przykład do profilowania, śledzenia lub manipulacji behawioralnej.</li>
+            <li><strong>Przechowywanie danych:</strong> Kwestia, jak długo i w jaki sposób dane są przechowywane, jest
+                kluczowa dla zapewnienia prywatności.</li>
+        </ul>
+        <p>W odpowiedzi na te wyzwania powstały regulacje takie jak RODO (General Data Protection Regulation) w Europie,
+            które nakładają obowiązki na firmy w zakresie ochrony danych i zapewnienia użytkownikom kontroli nad swoimi
+            danymi. Kluczowym wyzwaniem dla rozwoju AI w przyszłości będzie równoważenie potrzeby dostępu do danych z
+            zachowaniem prywatności.</p>
+
+        <h3>Wyjaśnialność i Transparentność</h3>
+        <p>Wiele modeli AI, szczególnie tych opartych na głębokim uczeniu, działa jako tzw. "czarne skrzynki" – są
+            niezwykle skuteczne, ale trudno zrozumieć, jak dokładnie dochodzą do swoich decyzji. Brak wyjaśnialności
+            może być problematyczny, szczególnie w aplikacjach o wysokiej stawce, takich jak opieka zdrowotna, systemy
+            finansowe czy wymiar sprawiedliwości.</p>
+        <p>Dlaczego wyjaśnialność jest ważna?</p>
+        <ul>
+            <li><strong>Zaufanie:</strong> Ludzie muszą ufać, że decyzje podejmowane przez AI są sprawiedliwe i
+                uzasadnione. Modele, które są bardziej transparentne i wyjaśnialne, łatwiej zyskać zaufanie
+                użytkowników.</li>
+            <li><strong>Odpowiedzialność:</strong> W przypadkach, gdy AI popełnia błędy, konieczne jest zrozumienie, co
+                poszło nie tak, aby móc naprawić problem i pociągnąć odpowiedzialne osoby lub firmy do
+                odpowiedzialności.</li>
+            <li><strong>Kontrola regulacyjna:</strong> Wymogi regulacyjne mogą wymagać, aby decyzje podejmowane przez AI
+                były w pełni wyjaśnialne, szczególnie w branżach regulowanych, takich jak finanse czy opieka zdrowotna.
+            </li>
+        </ul>
+        <p>W odpowiedzi na te wyzwania rozwijane są techniki takie jak <em>Explainable AI (XAI)</em>, które mają na celu
+            dostarczenie bardziej przejrzystych i zrozumiałych modeli AI.</p>
+
+        <h3>Odpowiedzialność i Własność Decyzji</h3>
+        <p>Wraz z rosnącą autonomią systemów AI pojawiają się pytania o odpowiedzialność za decyzje podejmowane przez te
+            systemy. Kto jest odpowiedzialny, jeśli autonomiczny pojazd spowoduje wypadek? Kto ponosi winę za błędną
+            diagnozę postawioną przez system AI? Odpowiedzi na te pytania nie są jeszcze w pełni uregulowane.</p>
+        <p>Istnieje kilka podejść do tego problemu:</p>
+        <ul>
+            <li><strong>Odpowiedzialność producenta:</strong> W wielu przypadkach odpowiedzialność spada na firmę, która
+                opracowała algorytm lub sprzęt. Jest to podobne do odpowiedzialności producentów samochodów za wady
+                techniczne.</li>
+            <li><strong>Odpowiedzialność operatora:</strong> W innych przypadkach odpowiedzialność może spoczywać na
+                osobie lub firmie korzystającej z systemu AI, na przykład na operatorze autonomicznego pojazdu.</li>
+            <li><strong>Regulacje:</strong> Coraz więcej krajów rozważa wprowadzenie regulacji, które określają ramy
+                prawne dla odpowiedzialności za decyzje AI.</li>
+        </ul>
+
+        <h3>Etyka w Zastosowaniach Wojskowych i Przemysłowych</h3>
+        <p>Jednym z najtrudniejszych tematów etycznych związanych z AI jest jego użycie w aplikacjach wojskowych i
+            przemysłowych. AI może być wykorzystywana do budowy autonomicznych systemów broni, co rodzi pytania o
+            moralność i konsekwencje stosowania technologii do celów militarnych.</p>
+        <p>Kluczowe pytania etyczne to:</p>
+        <ul>
+            <li><strong>Czy AI powinna decydować o życiu i śmierci?:</strong> Autonomiczne systemy broni mogą podejmować
+                decyzje o atakach bez udziału człowieka, co rodzi obawy o ich moralność i odpowiedzialność.</li>
+            <li><strong>Skalowanie destrukcji:</strong> AI może przyczynić się do eskalacji konfliktów, zwiększając
+                zdolność do prowadzenia szybkich i zautomatyzowanych działań wojennych.</li>
+        </ul>
+
+        <h3>Przyszłość Etyki AI</h3>
+        <p>Etyka AI będzie kluczowym obszarem badań i regulacji w nadchodzących latach. Wraz z rosnącym zastosowaniem
+            sztucznej inteligencji w życiu codziennym i krytycznych systemach, potrzebne będą nowe zasady i ramy
+            regulacyjne, które zapewnią odpowiedzialne i etyczne wykorzystanie AI. W przyszłości możemy oczekiwać
+            większego nacisku na:</p>
+        <ul>
+            <li><strong>Globalne regulacje:</strong> Międzynarodowe regulacje i standardy będą kluczowe
+
+                dla zapewnienia, że AI jest rozwijana i stosowana w sposób etyczny.</li>
+            <li><strong>Odpowiedzialność społeczna:</strong> Firmy i instytucje będą musiały brać większą
+                odpowiedzialność za etyczne projektowanie i wdrażanie systemów AI.</li>
+            <li><strong>Równość i sprawiedliwość:</strong> AI będzie musiała być rozwijana w sposób, który minimalizuje
+                uprzedzenia i promuje sprawiedliwość społeczną.</li>
+        </ul>
+
+        <h3>Podsumowanie</h3>
+        <p>Etyka AI to kluczowy element przyszłości rozwoju sztucznej inteligencji. Aby technologie AI mogły w pełni
+            służyć społeczeństwu, muszą być rozwijane w sposób odpowiedzialny, z poszanowaniem prywatności,
+            wyjaśnialności oraz minimalizowania uprzedzeń. Dalszy rozwój AI będzie wymagał ścisłej współpracy naukowców,
+            inżynierów, regulatorów i społeczeństwa, aby zapewnić, że AI będzie narzędziem poprawy jakości życia, a nie
+            źródłem nowych problemów.</p>
+        <form class="signup-form" method="get" enctype="multipart/form-data" action="mailto:test.com">
+            <p class="form-description">Jeśli chcesz dowiedzieć się więcej skontaktuj się ze mną</p>
+            <div class="form-fields">
+                <label for="name" class="visually-hidden">Imię</label>
+                <input id="name" type="text" placeholder="Imię" class="form-input">
+                <label for="subject" class="visually-hidden">Temat</label>
+                <input id="subject" type="text" placeholder="temat" class="form-input">
+                <label for="email" class="visually-hidden">Email</label>
+                <input id="email" type="email" placeholder="Email" class="form-input">
+                <label for="comment" class="visually-hidden">Komentarz</label>
+                <textarea name="comment" id="comment" placeholder="Komentarz" class="form-input"></textarea>
+            </div>
+            <div class="form-submit">
+                <input type="submit" value="Wyślij" class="submit-button">
+            </div>
+        </form>
+    </main>
+    <footer class="main-footer">
+        <p>&copy; Dawid Koterwas 2024</p>
+    </footer>
+</body>
+
+</html>
