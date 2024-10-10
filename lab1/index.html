@@ -9,9 +9,10 @@
     <meta name="Author" content="Dawid Koterwas" />
     <title>Machine Learning</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
-<body class="container">
+<body class="container" onload="startClock()">
     <header class="main-header">
         <h1 class="site-title"><a href="index.html">Machine Learning</a></h1>
         <nav class="main-nav">
@@ -178,8 +179,46 @@
             dolorum. Quas tempore delectus consequuntur obcaecati necessitatibus ipsum, qui quae. Eligendi, qui!
         </p>
 
-        <a href="kolorujtlo.html">Strona z kolorowaniem tła i konwersją jednostek</a>
-        <a href="timedate.html">Strona z zegarem</a>
+        <h3>Zegar</h3>
+        <div id="zegarek"></div>
+        <div id="data"></div>
+
+        <h3>Zmiana koloru tła strony</h3>
+        <form method="POST" name="background">
+            <input type="button" value="żółty" onclick="changeBackground('#FFF000')">
+            <input type="button" value="czarny" onclick="changeBackground('#000000')">
+            <input type="button" value="biały" onclick="changeBackground('#FFFFFF')">
+            <input type="button" value="zielony" onclick="changeBackground('#00FF00')">
+            <input type="button" value="niebieski" onclick="changeBackground('#0000FF')">
+            <input type="button" value="pomarańczowy" onclick="changeBackground('#FF8000')">
+            <input type="button" value="szary" onclick="changeBackground('#c0c0c0')">
+            <input type="button" value="czerwony" onclick="changeBackground('#FF0000')">
+        </form>
+
+        <h3>Konwerter jednostek</h3>
+        <form name="converterForm">
+            <input type="text" name="input" id="input" value="0" oninput="convert()">
+
+            <select name="measure1" id="measure1" onchange="convert()">
+                <option value="1">metry</option>
+                <option value="0.001">milimetry</option>
+                <option value="100">centymetry</option>
+                <option value="0.000621371">mile</option>
+                <option value="3.28084">stopy</option>
+            </select>
+
+            <span>na</span>
+
+            <select name="measure2" id="measure2" onchange="convert()">
+                <option value="1">metry</option>
+                <option value="0.001">milimetry</option>
+                <option value="100">centymetry</option>
+                <option value="0.000621371">mile</option>
+                <option value="3.28084">stopy</option>
+            </select>
+
+            <p>Przekonwertowana wersja: <span id="display">0</span></p>
+            <button type="button" onclick="clearForm()">Wyczyść</button>
 
     </main>
     <footer class="main-footer">
