@@ -10,6 +10,9 @@
     <title>Machine Learning</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body class="container" onload="startClock()">
@@ -220,6 +223,55 @@
             <p>Przekonwertowana wersja: <span id="display">0</span></p>
             <button type="button" onclick="clearForm()">Wyczyść</button>
 
+
+
+            <div id="btn1" class="jq-block">Kliknij mnie by zobaczyć magię</div>
+            <script>
+                $('#btn1').on('click', function () {
+                    $(this).animate({
+                        width: '500px',
+                        opacity: 0.4,
+                        fontSize: '3em',
+                        borderWidth: '10px'
+                    })
+                })
+            </script>
+
+            <div id="btn2" class="jq-block">Najedź na mnie</div>
+            <script>
+                $('#btn2').on({
+                    'mouseover': function () {
+                        $(this).animate({
+                            width: '300px'
+                        }, 800)
+                    },
+                    'mouseout': function () {
+                        $(this).animate({
+                            width: '200px'
+                        }, 800)
+                    }
+                })
+            </script>
+
+            <div id="btn3" class="jq-block">Kliknij na mnie wielokrotnie</div>
+            <script>
+                $('#btn3').on('click', function () {
+                    if (!$(this).is(':animated')) {
+                        $(this).animate({
+                            width: '+=' + 50,
+                            height: '+=' + 50,
+                            opacity: '-=' + 0.1,
+                            duration: 3000
+                        })
+                    }
+
+                })
+            </script>
+
+            <div id="btn4" class="jq-block">Odwracalne transformacje na kliknięcie</div>
+            <script>
+                $('#btn4').on('click', function () { $(this).toggleClass('toggle') })
+            </script>
     </main>
     <footer class="main-footer">
         <p>&copy; Dawid Koterwas 2024</p>

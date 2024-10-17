@@ -186,3 +186,20 @@ body {
     padding: 1rem 0;
     border-radius: 4px;
 }
+
+.jq-block {
+    text-align: center;
+    border: 1px solid #333;
+    background: #ddd;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.toggle {
+    background-color: red;
+    transform: rotate(180deg);
+}
+
+#btn4 {
+    transition: all 1s linear;
+}
