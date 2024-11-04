@@ -1,0 +1,130 @@
+<h2 class="section-title">Reinforcement Learning</h2>
+<img src="https://images.unsplash.com/photo-1679054164140-cb363aa7b28a?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    alt="pies trzymający patyk w zębach" style="float: right; margin-right: 10px;">
+<p>Reinforcement Learning (RL), czyli uczenie ze wzmocnieniem, to fascynująca dziedzina sztucznej inteligencji,
+    która opiera się na prostej, ale potężnej koncepcji: uczeniu się poprzez interakcję ze środowiskiem. W
+    przeciwieństwie do uczenia nadzorowanego, gdzie model uczy się na oznaczonych przykładach, lub uczenia
+    nienadzorowanego, gdzie szuka wzorców w danych, RL pozwala agentowi uczyć się optymalnych zachowań poprzez
+    próby i błędy.</p>
+<p>Wyobraź sobie, że uczysz psa nowej sztuczki. Nie możesz mu dokładnie wytłumaczyć, co ma zrobić, ale możesz go
+    nagradzać, gdy robi coś prawidłowo. Z czasem pies nauczy się, jakie zachowania prowadzą do nagrody. To
+    właśnie jest istota Reinforcement Learning.</p>
+
+<h3>Kluczowe koncepcje</h3>
+<p>Aby zrozumieć RL, musimy poznać kilka podstawowych pojęć:</p>
+<ol>
+    <li><strong>Agent</strong>: To nasz "uczeń", który podejmuje decyzje i wykonuje akcje.</li>
+    <li><strong>Środowisko</strong>: Świat, w którym działa agent.</li>
+    <li><strong>Stan</strong>: Aktualna sytuacja agenta w środowisku.</li>
+    <li><strong>Akcja</strong>: Działanie, które agent może podjąć.</li>
+    <li><strong>Nagroda</strong>: Informacja zwrotna ze środowiska o tym, jak dobra była akcja.</li>
+    <li><strong>Polityka</strong>: Strategia agenta określająca, jakie akcje podejmować w danych stanach.</li>
+</ol>
+<h3>Proces uczenia</h3>
+<p>Proces uczenia w RL można opisać następująco:</p>
+<ol>
+    <li>Agent obserwuje aktualny stan środowiska.</li>
+    <li>Na podstawie swojej polityki wybiera akcję.</li>
+    <li>Środowisko przechodzi do nowego stanu w reakcji na akcję agenta.</li>
+    <li>Agent otrzymuje nagrodę (pozytywną lub negatywną).</li>
+    <li>Agent aktualizuje swoją wiedzę na podstawie otrzymanej nagrody.</li>
+    <li>Proces powtarza się, a agent stopniowo uczy się optymalnej polityki.</li>
+</ol>
+<h3>Kluczowe techniki w RL</h3>
+
+<h4>Value Learning vs Policy Learning</h4>
+<p>W RL wyróżniamy dwa główne podejścia do uczenia się:</p>
+<ol>
+    <li><strong>Value Learning</strong>: Agent uczy się wartości stanów lub par stan-akcja. Głównym celem jest
+        znalezienie funkcji wartości, która mówi, jak dobry jest dany stan lub akcja w długoterminowej
+        perspektywie.</li>
+    <li><strong>Policy Learning</strong>: Agent bezpośrednio uczy się polityki, czyli mapowania stanów na akcje,
+        bez explicite obliczania wartości stanów.</li>
+</ol>
+
+<h4>Q-Learning</h4>
+<p>Q-Learning to popularna technika value learning. Opiera się na nauce funkcji Q, która przypisuje wartości
+    parom stan-akcja. Funkcja Q mówi agentowi, jaką wartość długoterminową może oczekiwać, podejmując daną akcję
+    w danym stanie.</p>
+<p>Kluczowe elementy Q-Learning:</p>
+<ul>
+    <li><strong>Q-funkcja</strong>: Q(s,a) reprezentuje oczekiwaną sumę przyszłych nagród, rozpoczynając od
+        stanu s i podejmując akcję a.</li>
+    <li><strong>Równanie Bellmana</strong>: Używane do aktualizacji wartości Q.</li>
+    <li><strong>Eksploracja vs Eksploatacja</strong>: Balans między odkrywaniem nowych możliwości a
+        wykorzystywaniem znanej wiedzy.</li>
+</ul>
+
+<h4>Policy Gradient Methods</h4>
+<p>Metody gradientu polityki to przykład policy learning. Zamiast uczyć się wartości stanów, bezpośrednio
+    optymalizują politykę. Są szczególnie użyteczne w przestrzeniach ciągłych akcji.</p>
+
+<h4>Deep Reinforcement Learning</h4>
+<p>Połączenie RL z deep learning doprowadziło do przełomów w ostatnich latach. Głębokie sieci neuronowe są
+    używane jako aproksymatory funkcji Q lub polityk, pozwalając na rozwiązywanie bardziej złożonych
+    problemów.</p>
+
+<h3>Nagrody i ich projektowanie</h3>
+<p>Projektowanie funkcji nagrody jest kluczowym aspektem RL. Nagroda musi dokładnie odzwierciedlać cel,
+    który chcemy osiągnąć. Źle zaprojektowana funkcja nagrody może prowadzić do nieoczekiwanych i
+    niepożądanych zachowań agenta.</p>
+
+<h3>Zastosowania i sukcesy RL</h3>
+<p>Reinforcement Learning znalazło wiele fascynujących zastosowań:</p>
+<ol>
+    <li><strong>AlphaGo i AlphaZero</strong>: Przełomowe systemy DeepMind, które pokonały najlepszych
+        ludzkich graczy w Go, a następnie osiągnęły nadludzki poziom w szachach i shogi, ucząc się wyłącznie
+        poprzez grę z samym sobą.</li>
+    <li><strong>Robotyka</strong>: RL jest używane do nauczenia robotów skomplikowanych zadań, takich jak
+        chwytanie obiektów czy poruszanie się w złożonych środowiskach.</li>
+    <li><strong>Autonomiczne pojazdy</strong>: Uczenie ze wzmocnieniem pomaga w rozwoju systemów decyzyjnych
+        dla samochodów autonomicznych.</li>
+    <li><strong>Optymalizacja systemów</strong>: Od zarządzania zasobami w centrach danych po optymalizację
+        sieci energetycznych.</li>
+    <li><strong>Spersonalizowane rekomendacje</strong>: Systemy rekomendacji wykorzystują RL do dynamicznego
+        dostosowywania się do preferencji użytkowników.</li>
+</ol>
+
+<h3>Wyzwania i przyszłość RL</h3>
+<p>Mimo imponujących sukcesów, RL wciąż stoi przed wieloma wyzwaniami:</p>
+<ol>
+    <li><strong>Efektywność próbkowania</strong>: RL często wymaga ogromnej liczby interakcji ze
+        środowiskiem, co może być niepraktyczne w rzeczywistych zastosowaniach.</li>
+    <li><strong>Transferowalność</strong>: Przenoszenie umiejętności nauczonych w jednym środowisku do
+        innego jest wciąż trudne.</li>
+    <li><strong>Eksploracja w dużych przestrzeniach stanów</strong>: W złożonych środowiskach efektywna
+        eksploracja pozostaje wyzwaniem.</li>
+    <li><strong>Interpretacja i bezpieczeństwo</strong>: Zrozumienie decyzji podejmowanych przez agenty RL i
+        zapewnienie ich bezpieczeństwa jest kluczowe dla zastosowań w świecie rzeczywistym.</li>
+</ol>
+<p>Przyszłość RL jest ekscytująca, z potencjalnymi przełomami w obszarach takich jak:</p>
+<ul>
+    <li>Multi-agent RL</li>
+    <li>Hierarchiczne RL</li>
+    <li>Meta-learning w kontekście RL</li>
+    <li>Połączenie RL z rozumowaniem symbolicznym</li>
+</ul>
+
+<h3>Podsumowanie</h3>
+<p>Reinforcement Learning to potężne narzędzie w arsenale sztucznej inteligencji, oferujące unikalną
+    zdolność do uczenia się złożonych zachowań poprzez interakcję ze środowiskiem. Od gier planszowych po
+    robotykę i optymalizację systemów, RL znajduje coraz więcej zastosowań w realnym świecie. Mimo wyzwań,
+    jakie stoją przed tą dziedziną, jej potencjał do rozwiązywania złożonych problemów decyzyjnych czyni ją
+    jednym z najbardziej ekscytujących obszarów badań w AI.</p>
+
+<form class="signup-form" method="get" enctype="multipart/form-data" action="mailto:test.com">
+    <p class="form-description">Jeśli chcesz dowiedzieć się więcej skontaktuj się ze mną</p>
+    <div class="form-fields">
+        <label for="name" class="visually-hidden">Imię</label>
+        <input id="name" type="text" placeholder="Imię" class="form-input">
+        <label for="subject" class="visually-hidden">Temat</label>
+        <input id="subject" type="text" placeholder="temat" class="form-input">
+        <label for="email" class="visually-hidden">Email</label>
+        <input id="email" type="email" placeholder="Email" class="form-input">
+        <label for="comment" class="visually-hidden">Komentarz</label>
+        <textarea name="comment" id="comment" placeholder="Komentarz" class="form-input"></textarea>
+    </div>
+    <div class="form-submit">
+        <input type="submit" value="Wyślij" class="submit-button">
+    </div>
+</form>

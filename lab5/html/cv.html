@@ -1,0 +1,143 @@
+<h2 class="section-title">Computer Vision</h2>
+<p>Computer Vision (CV) to fascynująca dziedzina sztucznej inteligencji, która dąży do nadania komputerom
+    zdolności "widzenia" i interpretowania świata wizualnego w sposób podobny do ludzkiego. Jest to niezwykle
+    złożone zadanie, które wymaga integracji wiedzy z różnych dziedzin, takich jak przetwarzanie obrazów,
+    uczenie maszynowe, fizyka optyki czy nawet neurobiologia.</p>
+<p>W erze cyfrowej, gdzie codziennie generowane są miliardy zdjęć i filmów, Computer Vision staje się coraz
+    bardziej krytyczną technologią. Od automatycznej klasyfikacji zdjęć w naszych smartfonach po systemy
+    autonomicznych pojazdów - CV jest wszechobecne i ma potencjał rewolucjonizowania wielu aspektów naszego
+    życia i pracy.</p>
+
+<h3>Fundamenty Computer Vision</h3>
+<p>U podstaw Computer Vision leży zdolność do przekształcania surowych danych pikselowych w użyteczne
+    informacje. Proces ten obejmuje kilka kluczowych etapów:</p>
+<ol>
+    <li><strong>Akwizycja obrazu:</strong> Pozyskiwanie obrazów cyfrowych za pomocą kamer, skanerów lub innych
+        urządzeń.</li>
+    <li><strong>Przetwarzanie wstępne:</strong> Poprawianie jakości obrazu, usuwanie szumów, normalizacja.</li>
+    <li><strong>Ekstrakcja cech:</strong> Identyfikacja kluczowych punktów, krawędzi, kształtów lub tekstur w
+        obrazie.</li>
+    <li><strong>Analiza wysokopoziomowa:</strong> Interpretacja wyodrębnionych cech w celu zrozumienia
+        zawartości obrazu.</li>
+</ol>
+
+<h3>Klasyfikacja obrazów</h3>
+<p>Klasyfikacja obrazów to jedno z podstawowych zadań w Computer Vision. Polega na przypisaniu obrazowi jednej
+    lub więcej etykiet z predefiniowanego zestawu kategorii. Na przykład, system może być trenowany do
+    rozpoznawania obrazów jako "pies", "kot", "samochód" itp.</p>
+<p>Współczesne systemy klasyfikacji obrazów często wykorzystują głębokie sieci konwolucyjne (CNN), które
+    automatycznie uczą się hierarchii cech, od prostych krawędzi i tekstur na niższych warstwach, po bardziej
+    złożone kształty i obiekty na wyższych warstwach.</p>
+
+<h3>Lokalizacja obiektów</h3>
+<p>Lokalizacja idzie o krok dalej niż klasyfikacja, określając nie tylko to, co znajduje się na obrazie, ale
+    także gdzie dokładnie się to znajduje. Typowym wynikiem lokalizacji jest "bounding box" - prostokąt
+    otaczający obiekt zainteresowania.</p>
+<p>Lokalizacja jest kluczowa w wielu aplikacjach, takich jak systemy wspomagania kierowcy, gdzie precyzyjna
+    lokalizacja innych pojazdów, pieszych czy znaków drogowych jest niezbędna do bezpiecznego funkcjonowania.
+</p>
+
+<h3>Detekcja obiektów</h3>
+<p>Detekcja obiektów łączy klasyfikację z lokalizacją, umożliwiając identyfikację i lokalizację wielu obiektów
+    na jednym obrazie. Jest to znacznie bardziej złożone zadanie, ponieważ system musi poradzić sobie z różnymi
+    skalami obiektów, częściowymi zasłonięciami i zmiennymi warunkami oświetleniowymi.</p>
+<p>Popularne podejścia do detekcji obiektów obejmują:</p>
+<ul>
+    <li><strong>R-CNN (Region-based Convolutional Neural Networks)</strong> i ich udoskonalone wersje, takie jak
+        Fast R-CNN i Faster R-CNN, które wykorzystują propozycje regionów do zlokalizowania obiektów.</li>
+    <li><strong>YOLO (You Only Look Once)</strong>, rewolucyjny algorytm, który traktuje detekcję jako problem
+        regresji, umożliwiając detekcję w czasie rzeczywistym.</li>
+    <li><strong>SSD (Single Shot Detector)</strong>, który wykorzystuje wiele warstw o różnych skalach do
+        efektywnej detekcji obiektów różnych rozmiarów.</li>
+</ul>
+
+<h3>YOLO: Przełom w detekcji obiektów</h3>
+<p>YOLO zasługuje na szczególną uwagę ze względu na jego przełomowe podejście do detekcji obiektów. W
+    przeciwieństwie do wcześniejszych metod, które stosowały techniki sliding window lub propozycje regionów,
+    YOLO dzieli obraz na siatkę i dla każdej komórki siatki przewiduje bounding boxy i prawdopodobieństwa klas.
+</p>
+<p>Kluczowe zalety YOLO to:</p>
+<ul>
+    <li>Szybkość: YOLO może przetwarzać obrazy w czasie rzeczywistym, co jest kluczowe dla aplikacji takich jak
+        autonomiczne pojazdy czy systemy monitoringu.</li>
+    <li>Globalne rozumienie kontekstu: Patrząc na cały obraz jednocześnie, YOLO lepiej rozumie kontekst i
+        rzadziej popełnia błędy w tle.</li>
+    <li>Generalizacja: YOLO dobrze radzi sobie z detekcją obiektów w nowych lub nieoczekiwanych scenariuszach.
+    </li>
+</ul>
+<p>Kolejne wersje YOLO (v2, v3, v4, v5) wprowadziły dalsze udoskonalenia, czyniąc ten algorytm jednym z
+    najczęściej używanych w praktycznych aplikacjach Computer Vision.</p>
+
+<h3>Segmentacja obrazu</h3>
+<p>Segmentacja to zaawansowane zadanie CV, które polega na przypisaniu każdemu pikselowi obrazu etykiety klasy.
+    Wyróżniamy dwa główne typy segmentacji:</p>
+<ul>
+    <li><strong>Segmentacja semantyczna:</strong> Każdy piksel jest klasyfikowany do jednej z predefiniowanych
+        kategorii (np. "droga", "samochód", "chodnik"), bez rozróżniania poszczególnych instancji tej samej
+        klasy.</li>
+    <li><strong>Segmentacja instancji:</strong> Nie tylko klasyfikuje piksele, ale również rozróżnia
+        poszczególne instancje obiektów tej samej klasy (np. oddzielne identyfikatory dla każdego samochodu na
+        obrazie).</li>
+</ul>
+<p>Segmentacja jest kluczowa w wielu aplikacjach, od autonomicznych pojazdów po analizę obrazów medycznych,
+    gdzie precyzyjne określenie granic obiektów jest krytyczne.</p>
+
+<h3>Zastosowania Computer Vision</h3>
+<p>Computer Vision znajduje zastosowanie w niezliczonych dziedzinach, rewolucjonizując sposób, w jaki wchodzimy
+    w interakcję ze światem. Oto kilka przykładów:</p>
+<ul>
+    <li><strong>Autonomiczne pojazdy:</strong> CV umożliwia pojazdom "widzenie" drogi, innych pojazdów, pieszych
+        i przeszkód.</li>
+    <li><strong>Rozszerzona rzeczywistość (AR):</strong> Technologie CV pozwalają na nakładanie wirtualnych
+        obiektów na rzeczywisty świat w czasie rzeczywistym.</li>
+    <li><strong>Diagnostyka medyczna:</strong> Analiza obrazów medycznych (np. rentgenowskich czy MRI) może
+        pomóc w wykrywaniu chorób na wczesnym etapie.</li>
+    <li><strong>Systemy bezpieczeństwa:</strong> Zaawansowane systemy monitoringu wykorzystują CV do wykrywania
+        niepożądanych zachowań czy identyfikacji osób.</li>
+    <li><strong>Kontrola jakości w przemyśle:</strong> Automatyczna inspekcja produktów w liniach produkcyjnych.
+    </li>
+    <li><strong>Interakcja człowiek-komputer:</strong> Systemy rozpoznawania gestów czy śledzenia ruchu oczu.
+    </li>
+</ul>
+
+<h3>Wyzwania i przyszłość Computer Vision</h3>
+<p>Mimo imponujących postępów, Computer Vision wciąż stoi przed wieloma wyzwaniami:</p>
+<ul>
+    <li><strong>Robustness:</strong> Systemy CV muszą być odporne na zmiany oświetlenia, perspektywy czy
+        częściowe zasłonięcia obiektów.</li>
+    <li><strong>Efektywność obliczeniowa:</strong> Wiele zaawansowanych modeli CV wymaga znacznej mocy
+        obliczeniowej, co stanowi wyzwanie dla aplikacji mobilnych czy embedded.</li>
+    <li><strong>Uczenie z małej ilości danych:</strong> Rozwijanie metod, które mogą uczyć się z mniejszej
+        ilości oznaczonych danych, jest kluczowe dla wielu zastosowań.</li>
+    <li><strong>Interpretacja i wyjaśnialność:</strong> Zrozumienie, dlaczego modele CV podejmują określone
+        decyzje, jest krytyczne, szczególnie w zastosowaniach o wysokim ryzyku.</li>
+    <li><strong>Etyka i prywatność:</strong> Wraz z rosnącymi możliwościami CV, pojawiają się ważne pytania
+        etyczne dotyczące prywatności i potencjalnego nadużycia tych technologii.</li>
+</ul>
+<p>Przyszłość Computer Vision jest niezwykle obiecująca. Możemy oczekiwać dalszej integracji CV z innymi
+    dziedzinami AI, takimi jak przetwarzanie języka naturalnego czy robotyka, co doprowadzi do powstania
+    bardziej holistycznych systemów AI, zdolnych do kompleksowego rozumienia i interakcji ze światem.</p>
+
+<h3>Podsumowanie</h3>
+<p>Computer Vision to dynamicznie rozwijająca się dziedzina, która ma potencjał transformacji niemal każdego
+    aspektu naszego życia. Od poprawy bezpieczeństwa na drogach po rewolucję w opiece zdrowotnej, możliwości są
+    niemal nieograniczone. Wraz z postępem w dziedzinach takich jak deep learning, przetwarzanie edge i hardware
+    dedykowany do AI, możemy oczekiwać, że systemy CV staną się jeszcze bardziej zaawansowane, efektywne i
+    wszechobecne w nadchodzących latach.</p>
+<form class="signup-form" method="get" enctype="multipart/form-data" action="mailto:test.com">
+    <p class="form-description">Jeśli chcesz dowiedzieć się więcej skontaktuj się ze mną</p>
+    <div class="form-fields">
+        <label for="name" class="visually-hidden">Imię</label>
+        <input id="name" type="text" placeholder="Imię" class="form-input">
+        <label for="subject" class="visually-hidden">Temat</label>
+        <input id="subject" type="text" placeholder="temat" class="form-input">
+        <label for="email" class="visually-hidden">Email</label>
+        <input id="email" type="email" placeholder="Email" class="form-input">
+        <label for="comment" class="visually-hidden">Komentarz</label>
+        <textarea name="comment" id="comment" placeholder="Komentarz" class="form-input"></textarea>
+    </div>
+    <div class="form-submit">
+        <input type="submit" value="Wyślij" class="submit-button">
+    </div>
+</form>
+</main>
