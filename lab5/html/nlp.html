@@ -1,139 +1,105 @@
-<!DOCTYPE html>
-<html lang="pl">
+<h2 class="section-title">Natural Language Processing</h2>
+<p>Natural Language Processing (NLP) to fascynująca dziedzina sztucznej inteligencji, której celem jest
+    umożliwienie komputerom zrozumienia, interpretowania i generowania ludzkiego języka. Obejmuje szeroki zakres
+    technik, które pozwalają na analizę tekstu oraz mowy w sposób, który naśladuje sposób, w jaki robią to
+    ludzie. NLP stanowi pomost między językiem a technologią, umożliwiając maszynom przetwarzanie języka w
+    naturalny sposób.</p>
+<p>W erze cyfrowej, w której komunikacja w dużej mierze odbywa się poprzez tekst i mowę, NLP staje się kluczową
+    technologią. Od asystentów głosowych, przez automatyczne tłumaczenia, aż po analizę sentymentu w mediach
+    społecznościowych – NLP zyskuje na znaczeniu w każdej sferze życia codziennego i biznesu.</p>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Language" content="pl" />
-    <meta name="Author" content="Dawid Koterwas" />
-    <title>Machine Learning</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
+<h3>Fundamenty Natural Language Processing</h3>
+<p>Podstawowym celem NLP jest zamiana surowych danych tekstowych na zrozumiałe informacje, które mogą być
+    wykorzystane do różnych zadań. Proces ten składa się z kilku etapów:</p>
+<ol>
+    <li><strong>Akwizycja danych tekstowych:</strong> Pozyskiwanie danych tekstowych z różnych źródeł, takich
+        jak dokumenty, artykuły, wiadomości czy transkrypcje mowy.</li>
+    <li><strong>Przetwarzanie wstępne:</strong> Czyszczenie danych tekstowych poprzez usuwanie niepotrzebnych
+        znaków, normalizację tekstu i podział na zdania lub słowa (tokenizacja).</li>
+    <li><strong>Ekstrakcja cech:</strong> Identyfikacja kluczowych elementów, takich jak terminy, frazy, części
+        mowy, zależności składniowe i semantyczne.</li>
+    <li><strong>Analiza wysokopoziomowa:</strong> Zrozumienie treści tekstu, jego struktury, kontekstu i
+        znaczenia.</li>
+</ol>
 
-<body class="container">
-    <header class="main-header">
-        <h1 class="site-title"><a href="../index.html">Machine Learning</a></h1>
-        <nav class="main-nav">
-            <ul class="menu">
-                <li><a href="dl.html">Deep Learning</a></li>
-                <li><a href="nlp.html">NLP</a></li>
-                <li><a href="cv.html">Computer Vision</a></li>
-                <li><a href="rl.html">Reinforcement Learning</a></li>
-                <li><a href="etyka.html">Etyka AI</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="content">
-        <h2 class="section-title">Natural Language Processing</h2>
-        <p>Natural Language Processing (NLP) to fascynująca dziedzina sztucznej inteligencji, której celem jest
-            umożliwienie komputerom zrozumienia, interpretowania i generowania ludzkiego języka. Obejmuje szeroki zakres
-            technik, które pozwalają na analizę tekstu oraz mowy w sposób, który naśladuje sposób, w jaki robią to
-            ludzie. NLP stanowi pomost między językiem a technologią, umożliwiając maszynom przetwarzanie języka w
-            naturalny sposób.</p>
-        <p>W erze cyfrowej, w której komunikacja w dużej mierze odbywa się poprzez tekst i mowę, NLP staje się kluczową
-            technologią. Od asystentów głosowych, przez automatyczne tłumaczenia, aż po analizę sentymentu w mediach
-            społecznościowych – NLP zyskuje na znaczeniu w każdej sferze życia codziennego i biznesu.</p>
+<h3>Klasyfikacja tekstu</h3>
+<p>Klasyfikacja tekstu to jedno z podstawowych zadań NLP. Polega na przypisaniu tekstowi jednej lub więcej
+    etykiet z predefiniowanego zestawu kategorii. Przykładem może być przypisywanie opinii do kategorii
+    "pozytywna", "neutralna" lub "negatywna" (analiza sentymentu).</p>
+<p>Popularne techniki stosowane w klasyfikacji tekstu to modele wektorowe, takie jak TF-IDF (Term
+    Frequency-Inverse Document Frequency), który przekształca słowa w wektory liczbowe, pozwalając systemowi na
+    identyfikację najważniejszych terminów w dokumencie. W bardziej zaawansowanych podejściach, takich jak
+    modele transformatorowe (np. BERT, GPT), systemy uczą się kontekstu i relacji między słowami w zdaniu, co
+    umożliwia bardziej precyzyjną klasyfikację.</p>
 
-        <h3>Fundamenty Natural Language Processing</h3>
-        <p>Podstawowym celem NLP jest zamiana surowych danych tekstowych na zrozumiałe informacje, które mogą być
-            wykorzystane do różnych zadań. Proces ten składa się z kilku etapów:</p>
-        <ol>
-            <li><strong>Akwizycja danych tekstowych:</strong> Pozyskiwanie danych tekstowych z różnych źródeł, takich
-                jak dokumenty, artykuły, wiadomości czy transkrypcje mowy.</li>
-            <li><strong>Przetwarzanie wstępne:</strong> Czyszczenie danych tekstowych poprzez usuwanie niepotrzebnych
-                znaków, normalizację tekstu i podział na zdania lub słowa (tokenizacja).</li>
-            <li><strong>Ekstrakcja cech:</strong> Identyfikacja kluczowych elementów, takich jak terminy, frazy, części
-                mowy, zależności składniowe i semantyczne.</li>
-            <li><strong>Analiza wysokopoziomowa:</strong> Zrozumienie treści tekstu, jego struktury, kontekstu i
-                znaczenia.</li>
-        </ol>
+<h3>Ekstrakcja informacji</h3>
+<p>Ekstrakcja informacji to zadanie, które polega na identyfikacji kluczowych danych z tekstu, takich jak nazwy
+    własne, daty, lokalizacje czy inne istotne informacje. Jest to kluczowa technologia w systemach
+    przetwarzających duże ilości tekstu, takich jak automatyczne generowanie podsumowań dokumentów czy analiza
+    treści internetowych.</p>
+<p>Techniki takie jak Named Entity Recognition (NER) pozwalają systemom NLP na wyodrębnianie nazwisk, miejsc,
+    organizacji i innych specyficznych terminów z tekstu. Dzięki temu możliwe jest tworzenie bardziej
+    zaawansowanych aplikacji, takich jak wyszukiwarki semantyczne czy systemy monitorowania mediów.</p>
 
-        <h3>Klasyfikacja tekstu</h3>
-        <p>Klasyfikacja tekstu to jedno z podstawowych zadań NLP. Polega na przypisaniu tekstowi jednej lub więcej
-            etykiet z predefiniowanego zestawu kategorii. Przykładem może być przypisywanie opinii do kategorii
-            "pozytywna", "neutralna" lub "negatywna" (analiza sentymentu).</p>
-        <p>Popularne techniki stosowane w klasyfikacji tekstu to modele wektorowe, takie jak TF-IDF (Term
-            Frequency-Inverse Document Frequency), który przekształca słowa w wektory liczbowe, pozwalając systemowi na
-            identyfikację najważniejszych terminów w dokumencie. W bardziej zaawansowanych podejściach, takich jak
-            modele transformatorowe (np. BERT, GPT), systemy uczą się kontekstu i relacji między słowami w zdaniu, co
-            umożliwia bardziej precyzyjną klasyfikację.</p>
+<h3>Tłumaczenie maszynowe</h3>
+<p>Tłumaczenie maszynowe (MT) umożliwia automatyczną konwersję tekstu z jednego języka na inny. Dzięki postępom
+    w NLP, współczesne systemy tłumaczeniowe osiągają coraz wyższy poziom dokładności, zbliżając się do jakości
+    tłumaczeń wykonanych przez ludzi.</p>
+<p>Początkowe podejścia do tłumaczenia, takie jak tłumaczenie statystyczne, opierały się na analizie dużych
+    zbiorów równoległych tekstów w różnych językach. Obecnie, dzięki modelom transformatorowym, takim jak BERT
+    czy GPT, tłumaczenie opiera się na kontekście całego zdania, co pozwala na bardziej naturalne i precyzyjne
+    przekłady.</p>
 
-        <h3>Ekstrakcja informacji</h3>
-        <p>Ekstrakcja informacji to zadanie, które polega na identyfikacji kluczowych danych z tekstu, takich jak nazwy
-            własne, daty, lokalizacje czy inne istotne informacje. Jest to kluczowa technologia w systemach
-            przetwarzających duże ilości tekstu, takich jak automatyczne generowanie podsumowań dokumentów czy analiza
-            treści internetowych.</p>
-        <p>Techniki takie jak Named Entity Recognition (NER) pozwalają systemom NLP na wyodrębnianie nazwisk, miejsc,
-            organizacji i innych specyficznych terminów z tekstu. Dzięki temu możliwe jest tworzenie bardziej
-            zaawansowanych aplikacji, takich jak wyszukiwarki semantyczne czy systemy monitorowania mediów.</p>
+<h3>Techniki i technologie w NLP</h3>
+<p>W NLP stosuje się szeroki wachlarz technik i technologii, które ewoluują w miarę postępów w dziedzinie
+    sztucznej inteligencji. Oto kilka z najważniejszych:</p>
+<ul>
+    <li><strong>TF-IDF (Term Frequency-Inverse Document Frequency):</strong> Klasyczna technika przekształcania
+        tekstu w wektory, które odzwierciedlają znaczenie poszczególnych słów w kontekście całego dokumentu i
+        zbioru danych.</li>
+    <li><strong>Word2Vec:</strong> Algorytm, który zamienia słowa w wektory, odwzorowując ich znaczenie i
+        relacje w przestrzeni wektorowej. Dzięki temu możliwe jest modelowanie semantycznych relacji między
+        słowami.</li>
+    <li><strong>BERT (Bidirectional Encoder Representations from Transformers):</strong> Model transformatorowy,
+        który umożliwia zrozumienie kontekstu całego zdania poprzez analizę słów zarówno od lewej do prawej, jak
+        i od prawej do lewej strony.</li>
+    <li><strong>GPT (Generative Pre-trained Transformer):</strong> Model generacyjny, który nie tylko potrafi
+        przetwarzać tekst, ale także go generować, co jest wykorzystywane w zaawansowanych aplikacjach, takich
+        jak chatboty czy tworzenie treści.</li>
+</ul>
 
-        <h3>Tłumaczenie maszynowe</h3>
-        <p>Tłumaczenie maszynowe (MT) umożliwia automatyczną konwersję tekstu z jednego języka na inny. Dzięki postępom
-            w NLP, współczesne systemy tłumaczeniowe osiągają coraz wyższy poziom dokładności, zbliżając się do jakości
-            tłumaczeń wykonanych przez ludzi.</p>
-        <p>Początkowe podejścia do tłumaczenia, takie jak tłumaczenie statystyczne, opierały się na analizie dużych
-            zbiorów równoległych tekstów w różnych językach. Obecnie, dzięki modelom transformatorowym, takim jak BERT
-            czy GPT, tłumaczenie opiera się na kontekście całego zdania, co pozwala na bardziej naturalne i precyzyjne
-            przekłady.</p>
+<h3>Przyszłość Natural Language Processing</h3>
+<p>Natural Language Processing znajduje coraz szersze zastosowanie w różnych dziedzinach życia. Od obsługi
+    klienta, poprzez edukację, po opiekę zdrowotną – NLP ma potencjał rewolucjonizowania interakcji między
+    ludźmi a maszynami. Przyszłość NLP wiąże się z dalszą integracją modeli językowych w różnych systemach, co
+    pozwoli na jeszcze bardziej naturalne interakcje.</p>
+<p>Główne wyzwania, przed którymi stoi NLP, to lepsze rozumienie kontekstu, precyzja w złożonych zadaniach,
+    takich jak tłumaczenia i wyjaśnialność decyzji podejmowanych przez modele. W miarę jak technologia się
+    rozwija, możemy spodziewać się coraz bardziej zaawansowanych systemów, które będą zdolne do
+    precyzyjniejszego zrozumienia ludzkiego języka.</p>
+<p>Przyszłość NLP może przynieść również nowe zastosowania, takie jak automatyczne tworzenie treści,
+    zaawansowane chatboty, które potrafią prowadzić konwersacje na wysokim poziomie, oraz systemy tłumaczeń w
+    czasie rzeczywistym, które będą zrozumiałe w wielu językach jednocześnie.</p>
 
-        <h3>Techniki i technologie w NLP</h3>
-        <p>W NLP stosuje się szeroki wachlarz technik i technologii, które ewoluują w miarę postępów w dziedzinie
-            sztucznej inteligencji. Oto kilka z najważniejszych:</p>
-        <ul>
-            <li><strong>TF-IDF (Term Frequency-Inverse Document Frequency):</strong> Klasyczna technika przekształcania
-                tekstu w wektory, które odzwierciedlają znaczenie poszczególnych słów w kontekście całego dokumentu i
-                zbioru danych.</li>
-            <li><strong>Word2Vec:</strong> Algorytm, który zamienia słowa w wektory, odwzorowując ich znaczenie i
-                relacje w przestrzeni wektorowej. Dzięki temu możliwe jest modelowanie semantycznych relacji między
-                słowami.</li>
-            <li><strong>BERT (Bidirectional Encoder Representations from Transformers):</strong> Model transformatorowy,
-                który umożliwia zrozumienie kontekstu całego zdania poprzez analizę słów zarówno od lewej do prawej, jak
-                i od prawej do lewej strony.</li>
-            <li><strong>GPT (Generative Pre-trained Transformer):</strong> Model generacyjny, który nie tylko potrafi
-                przetwarzać tekst, ale także go generować, co jest wykorzystywane w zaawansowanych aplikacjach, takich
-                jak chatboty czy tworzenie treści.</li>
-        </ul>
-
-        <h3>Przyszłość Natural Language Processing</h3>
-        <p>Natural Language Processing znajduje coraz szersze zastosowanie w różnych dziedzinach życia. Od obsługi
-            klienta, poprzez edukację, po opiekę zdrowotną – NLP ma potencjał rewolucjonizowania interakcji między
-            ludźmi a maszynami. Przyszłość NLP wiąże się z dalszą integracją modeli językowych w różnych systemach, co
-            pozwoli na jeszcze bardziej naturalne interakcje.</p>
-        <p>Główne wyzwania, przed którymi stoi NLP, to lepsze rozumienie kontekstu, precyzja w złożonych zadaniach,
-            takich jak tłumaczenia i wyjaśnialność decyzji podejmowanych przez modele. W miarę jak technologia się
-            rozwija, możemy spodziewać się coraz bardziej zaawansowanych systemów, które będą zdolne do
-            precyzyjniejszego zrozumienia ludzkiego języka.</p>
-        <p>Przyszłość NLP może przynieść również nowe zastosowania, takie jak automatyczne tworzenie treści,
-            zaawansowane chatboty, które potrafią prowadzić konwersacje na wysokim poziomie, oraz systemy tłumaczeń w
-            czasie rzeczywistym, które będą zrozumiałe w wielu językach jednocześnie.</p>
-
-        <h3>Podsumowanie</h3>
-        <p>Natural Language Processing to jedna z najbardziej dynamicznie rozwijających się dziedzin sztucznej
-            inteligencji. Dzięki zastosowaniom w takich obszarach jak obsługa klienta, edukacja, medycyna i biznes, NLP
-            ma potencjał zmienić sposób, w jaki wchodzimy w interakcje z technologią. Wraz z rozwojem nowych technik,
-            takich jak modele transformatorowe, NLP staje się coraz bardziej precyzyjne, efektywne i wszechobecne w
-            codziennym życiu.</p>
-        <form class="signup-form" method="get" enctype="multipart/form-data" action="mailto:test.com">
-            <p class="form-description">Jeśli chcesz dowiedzieć się więcej skontaktuj się ze mną</p>
-            <div class="form-fields">
-                <label for="name" class="visually-hidden">Imię</label>
-                <input id="name" type="text" placeholder="Imię" class="form-input">
-                <label for="subject" class="visually-hidden">Temat</label>
-                <input id="subject" type="text" placeholder="temat" class="form-input">
-                <label for="email" class="visually-hidden">Email</label>
-                <input id="email" type="email" placeholder="Email" class="form-input">
-                <label for="comment" class="visually-hidden">Komentarz</label>
-                <textarea name="comment" id="comment" placeholder="Komentarz" class="form-input"></textarea>
-            </div>
-            <div class="form-submit">
-                <input type="submit" value="Wyślij" class="submit-button">
-            </div>
-        </form>
-    </main>
-    <footer class="main-footer">
-        <p>&copy; Dawid Koterwas 2024</p>
-    </footer>
-</body>
-
-</html>
+<h3>Podsumowanie</h3>
+<p>Natural Language Processing to jedna z najbardziej dynamicznie rozwijających się dziedzin sztucznej
+    inteligencji. Dzięki zastosowaniom w takich obszarach jak obsługa klienta, edukacja, medycyna i biznes, NLP
+    ma potencjał zmienić sposób, w jaki wchodzimy w interakcje z technologią. Wraz z rozwojem nowych technik,
+    takich jak modele transformatorowe, NLP staje się coraz bardziej precyzyjne, efektywne i wszechobecne w
+    codziennym życiu.</p>
+<form class="signup-form" method="get" enctype="multipart/form-data" action="mailto:test.com">
+    <p class="form-description">Jeśli chcesz dowiedzieć się więcej skontaktuj się ze mną</p>
+    <div class="form-fields">
+        <label for="name" class="visually-hidden">Imię</label>
+        <input id="name" type="text" placeholder="Imię" class="form-input">
+        <label for="subject" class="visually-hidden">Temat</label>
+        <input id="subject" type="text" placeholder="temat" class="form-input">
+        <label for="email" class="visually-hidden">Email</label>
+        <input id="email" type="email" placeholder="Email" class="form-input">
+        <label for="comment" class="visually-hidden">Komentarz</label>
+        <textarea name="comment" id="comment" placeholder="Komentarz" class="form-input"></textarea>
+    </div>
+    <div class="form-submit">
+        <input type="submit" value="Wyślij" class="submit-button">
+    </div>
+</form>

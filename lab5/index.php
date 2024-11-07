@@ -1,17 +1,42 @@
 <?php
 error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
-if($_GET['idp'] == '') $strona = '/html/glowna.html';
-if($_GET['idp'] == 'dl') $strona = '/html/dl.html';
-if($_GET['idp'] == 'nlp') $strona = '/html/nlp.html';
-if($_GET['idp'] == 'cv') $strona = '/html/cv.html';
-if($_GET['idp'] == 'rl') $strona = '/html/rl.html';
-if($_GET['idp'] == 'etyka') $strona = '/html/etyka.html';
-if($_GET['idp'] == 'filmy') $strona = '/html/filmy.html';
 
-if (!file_exists(__DIR__ . $strona)) {
-    $strona = null;
-    $errorMessage = "Strona nie istnieje";
+$dbhost = 'localhost';
+$dbuser = 'root';
+$dbpass = '';
+$dbname = 'moja_strona';
+
+$conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+
+function showPage($conn, $alias) {
+    $stmt = $conn->prepare("SELECT * FROM page_list WHERE alias = ? LIMIT 1");
+    $stmt->bind_param("s", $alias);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    if (!$result) {
+        die("Query failed: " . $conn->error);
+    }
+    
+    $row = $result->fetch_assoc();
+    if (empty($row['alias'])) {
+        return '[nie_znaleziono_strony]';
+    } else {
+        return $row['page_content'];
+    }
+}
+
+$page_alias = '';
+if (isset($_GET['alias'])) {
+    $page_alias = htmlspecialchars($_GET['alias']);
+} else {
+    $page_alias = 'glowna';
+}
+
+$page_content = showPage($conn, $page_alias);
 
 ?>
 
@@ -34,26 +59,26 @@ if (!file_exists(__DIR__ . $strona)) {
 
 <body class="container" onload="startClock()">
     <header class="main-header">
-        <h1 class="site-title"><a href="index.html">Machine Learning</a></h1>
+        <h1 class="site-title"><a href="index.php">Machine Learning</a></h1>
         <nav class="main-nav">
             <ul class="menu">
-                <li><a href="index.php?idp=dl">Deep Learning</a></li>
-                <li><a href="index.php?idp=nlp">NLP</a></li>
-                <li><a href="index.php?idp=cv">Computer Vision</a></li>
-                <li><a href="index.php?idp=rl">Reinforcement Learning</a></li>
-                <li><a href="index.php?idp=etyka">Etyka AI</a></li>
-                <li><a href="index.php?idp=filmy">Filmy</a></li>
+                <li><a href="index.php?alias=dl">Deep Learning</a></li>
+                <li><a href="index.php?alias=nlp">NLP</a></li>
+                <li><a href="index.php?alias=cv">Computer Vision</a></li>
+                <li><a href="index.php?alias=rl">Reinforcement Learning</a></li>
+                <li><a href="index.php?alias=etyka">Etyka AI</a></li>
+                <li><a href="index.php?alias=filmy">Filmy</a></li>
             </ul>
         </nav>
     </header>
     <main class="content">
-    <?php 
-    if ($strona) {
-        include(__DIR__ . $strona);
-    } else {
-        echo "<p>$errorMessage</p>";
-    }
-    ?>
+        <?php 
+        if ($page_content !== '[nie_znaleziono_strony]') { 
+            echo $page_content; 
+        } else {
+            echo "<p>Strona nie istnieje</p>"; 
+        }
+        ?>
     </main>
     <footer class="main-footer">
         <?php
