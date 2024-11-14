@@ -1,10 +1,8 @@
 <?php
+
 error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 
-$dbhost = 'localhost';
-$dbuser = 'root';
-$dbpass = '';
-$dbname = 'moja_strona';
+include_once 'cfg.php';
 
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 if ($conn->connect_error) {
@@ -12,8 +10,8 @@ if ($conn->connect_error) {
 }
 
 function showPage($conn, $alias) {
-    $stmt = $conn->prepare("SELECT * FROM page_list WHERE alias = ? LIMIT 1");
-    $stmt->bind_param("s", $alias);
+    $stmt = $conn->prepare("SELECT * FROM page_list WHERE alias = ? OR (alias IS NULL AND id = ?) LIMIT 1"); // Szukamy po aliasie lub po ID, jeśli alias jest pusty
+    $stmt->bind_param("si", $alias, $alias); // Alias może być stringiem lub liczbą (ID)
     $stmt->execute();
     $result = $stmt->get_result();
     
