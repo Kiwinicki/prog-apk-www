@@ -3,6 +3,7 @@
 error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 
 include_once 'cfg.php';
+include_once 'mail.php';
 
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 if ($conn->connect_error) {
@@ -78,6 +79,9 @@ $page_content = showPage($conn, $page_alias);
         }
         ?>
     </main>
+    <section>
+        <?php PokazKontakt() ?>
+    </section>
     <footer class="main-footer">
         <?php
         $nrIndeksu = 169257;
