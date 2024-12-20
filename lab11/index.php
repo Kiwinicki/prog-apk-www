@@ -61,10 +61,10 @@ function PokazProduktyFront($conn) {
     $wynik = "<h2>Produkty</h2><ul>";
       while ($row = $result->fetch_assoc()) {
         $wynik .= "<li>" .
-            "Tytuł: " . htmlspecialchars($row['tytul']) . " | " .
+            "Tytuł: " . htmlspecialchars($row['tytul'] ?? '') . " | " .
             "Cena: " . $row['cena_netto'] . " | " .
-            "Kategoria: " . htmlspecialchars($row['kategoria_nazwa']) . " | " .
-            "Status: " . htmlspecialchars($row['status_dostepnosci']) . "</li>";
+            "Kategoria: " . htmlspecialchars($row['kategoria_nazwa'] ?? '') . " | " .
+            "Status: " . htmlspecialchars($row['status_dostepnosci'] ?? '') . "</li>";
         }
     $wynik .= "</ul>";
     return $wynik;
