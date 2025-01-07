@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="pl" />
+    <meta name="Author" content="Dawid Koterwas" />
+    <title>Machine Learning</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="container">
+    <header class="main-header">
+        <h1 class="site-title"><a href="../index.html">Machine Learning</a></h1>
+        <nav class="main-nav">
+            <ul class="menu">
+                <li><a href="dl.html">Deep Learning</a></li>
+                <li><a href="nlp.html">NLP</a></li>
+                <li><a href="cv.html">Computer Vision</a></li>
+                <li><a href="rl.html">Reinforcement Learning</a></li>
+                <li><a href="etyka.html">Etyka AI</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="content">
+        <h2 class="section-title">Deep Learning</h2>
+        <p>Deep Learning (DL) to gałąź sztucznej inteligencji, która koncentruje się na modelach uczących się
+            reprezentacji danych w wielowarstwowych strukturach, zwanych sieciami neuronowymi. Jest to poddziedzina
+            uczenia maszynowego, która zyskała na popularności w ostatnich latach dzięki swojej zdolności do
+            rozwiązywania złożonych problemów, takich jak rozpoznawanie obrazów, przetwarzanie języka naturalnego czy
+            sterowanie autonomicznymi pojazdami.</p>
+        <p>Dzięki rosnącej mocy obliczeniowej i dostępowi do ogromnych zbiorów danych, Deep Learning stał się
+            fundamentem nowoczesnej sztucznej inteligencji, umożliwiając maszynom naśladowanie niektórych funkcji mózgu
+            i efektywne przetwarzanie danych o wysokiej złożoności.</p>
+
+        <h3>Fundamenty Deep Learning</h3>
+        <p>Główną strukturą wykorzystywaną w Deep Learningu są sieci neuronowe. Składają się one z warstw neuronów (ang.
+            neurons), które przekształcają dane wejściowe na dane wyjściowe, ucząc się skomplikowanych zależności w
+            danych. Proces uczenia polega na dostosowywaniu wag między neuronami, aby minimalizować błąd predykcji na
+            podstawie dostarczonych danych treningowych.</p>
+        <ol>
+            <li><strong>Warstwa wejściowa:</strong> Otrzymuje dane w postaci surowych informacji, takich jak obrazy,
+                tekst lub dźwięk.</li>
+            <li><strong>Warstwy ukryte:</strong> Przetwarzają dane poprzez różne transformacje, ucząc się coraz bardziej
+                abstrakcyjnych cech, co umożliwia modelowi rozumienie złożonych wzorców.</li>
+            <li><strong>Warstwa wyjściowa:</strong> Dostarcza wynik w formie decyzji, klasyfikacji lub innej postaci
+                przewidywania.</li>
+        </ol>
+
+        <h3>Sieci neuronowe</h3>
+        <p>Sieci neuronowe to fundament Deep Learningu. Składają się z neuronów (jednostek przetwarzających), które są
+            połączone ze sobą w warstwach. Każdy neuron w sieci otrzymuje dane wejściowe, przetwarza je i przekazuje
+            wynik dalej. Kluczowe aspekty działania sieci neuronowych to:</p>
+        <ul>
+            <li><strong>Wagi i bias:</strong> Każde połączenie między neuronami ma przypisaną wagę, która wpływa na siłę
+                sygnału. Bias (wartość progowa) wpływa na aktywację neuronu.</li>
+            <li><strong>Funkcja aktywacji:</strong> Określa, czy neuron zostanie aktywowany, często stosując funkcje
+                nieliniowe, takie jak ReLU (Rectified Linear Unit) lub sigmoid.</li>
+            <li><strong>Forward propagation:</strong> Proces przekształcania danych wejściowych przez kolejne warstwy
+                sieci w celu uzyskania wyniku końcowego.</li>
+        </ul>
+
+        <h3>Backpropagation</h3>
+        <p>Jedną z kluczowych technik używanych w Deep Learningu jest <strong>backpropagation</strong>, czyli algorytm
+            wstecznej propagacji błędów. Jest to metoda wykorzystywana do trenowania sieci neuronowych, polegająca na
+            aktualizowaniu wag w oparciu o różnicę między wynikiem przewidywanym przez sieć a rzeczywistym wynikiem.</p>
+        <p>Backpropagation działa na zasadzie obliczania gradientu funkcji błędu względem każdej wagi w sieci i
+            odpowiedniej jej aktualizacji, co prowadzi do minimalizacji błędu w czasie kolejnych iteracji procesu
+            uczenia.</p>
+
+        <h3>Techniki i architektury w Deep Learning</h3>
+        <p>Deep Learning obejmuje wiele różnych technik i architektur sieci neuronowych, które mogą być stosowane w
+            zależności od problemu. Oto niektóre z nich:</p>
+        <ul>
+            <li><strong>Fully Connected Neural Networks (FCNN):</strong> Podstawowa struktura, w której każdy neuron w
+                jednej warstwie jest połączony z każdym neuronem w kolejnej. Używane głównie w zadaniach klasyfikacji i
+                regresji.</li>
+            <li><strong>Convolutional Neural Networks (CNN):</strong> Specjalizowane sieci neuronowe, zaprojektowane z
+                myślą o przetwarzaniu obrazów. Wykorzystują warstwy konwolucyjne, które przetwarzają obrazy przez
+                filtrowanie lokalnych cech, takich jak krawędzie czy tekstury.</li>
+            <li><strong>Recurrent Neural Networks (RNN):</strong> Sieci zaprojektowane do przetwarzania sekwencji
+                danych, takich jak tekst lub dane czasowe. RNNy mogą "pamiętać" wcześniejsze informacje dzięki pętlom w
+                swojej strukturze.</li>
+            <li><strong>Long Short-Term Memory (LSTM):</strong> Specjalna odmiana RNN, która lepiej radzi sobie z
+                długimi sekwencjami danych i problemem "zanikającego gradientu". Jest szeroko stosowana w NLP oraz
+                analizie szeregów czasowych.</li>
+            <li><strong>Transformery:</strong> Rewolucyjna architektura wykorzystywana w przetwarzaniu języka
+                naturalnego (NLP), np. w modelach takich jak BERT czy GPT. Zamiast tradycyjnych rekurencyjnych połączeń,
+                wykorzystują mechanizm "attention", który pozwala modelowi zwracać uwagę na różne części danych
+                wejściowych.</li>
+        </ul>
+
+        <h3>Optymalizacja sieci neuronowych</h3>
+        <p>Optymalizacja sieci neuronowych polega na aktualizowaniu wag w taki sposób, aby minimalizować funkcję błędu.
+            W tym celu stosowane są różne algorytmy optymalizacyjne:</p>
+        <ul>
+            <li><strong>Gradient Descent:</strong> Algorytm oparty na obliczaniu
+                <ul>
+                    <li><strong>Gradient Descent:</strong> Algorytm oparty na obliczaniu gradientu funkcji błędu
+                        względem wag sieci. Klasyczna wersja tego algorytmu, <em>Stochastic Gradient Descent (SGD)</em>,
+                        aktualizuje wagi po każdej iteracji na podstawie pojedynczych próbek, co przyspiesza proces
+                        uczenia.</li>
+                    <li><strong>Adam (Adaptive Moment Estimation):</strong> Popularny algorytm optymalizacyjny, który
+                        łączy zalety RMSprop i Momentum. Adam dynamicznie dostosowuje współczynnik uczenia dla każdej
+                        wagi, co przyspiesza konwergencję i sprawia, że model uczy się bardziej stabilnie.</li>
+                    <li><strong>RMSprop:</strong> Algorytm ten dzieli współczynnik uczenia przez ruchomą średnią z
+                        ostatnich gradientów, co pomaga w efektywniejszym uczeniu w obecności silnych oscylacji
+                        gradientu.</li>
+                </ul>
+
+                <h3>Przykłady zastosowań Deep Learning</h3>
+                <p>Deep Learning ma szerokie zastosowanie w wielu dziedzinach życia. Oto kilka przykładów:</p>
+                <ul>
+                    <li><strong>Rozpoznawanie obrazów:</strong> Deep Learning jest fundamentem zaawansowanych systemów
+                        rozpoznawania obrazów, takich jak identyfikacja obiektów na zdjęciach czy analiza obrazów
+                        medycznych.</li>
+                    <li><strong>Przetwarzanie języka naturalnego (NLP):</strong> Sieci neuronowe są szeroko stosowane do
+                        analizy i generowania tekstu, tłumaczenia maszynowego, analizy sentymentu czy systemów
+                        rekomendacji.</li>
+                    <li><strong>Autonomiczne pojazdy:</strong> Deep Learning umożliwia samochodom autonomicznym analizę
+                        otoczenia i podejmowanie decyzji na podstawie obrazu z kamer i czujników.</li>
+                    <li><strong>Gry komputerowe i symulacje:</strong> Modele Deep Learning są wykorzystywane do
+                        trenowania agentów AI w grach, gdzie uczą się one strategii i podejmowania decyzji w czasie
+                        rzeczywistym.</li>
+                    <li><strong>Rozpoznawanie mowy:</strong> Dzięki DL możliwe stało się tworzenie systemów
+                        rozpoznawania mowy, takich jak asystenci głosowi (np. Siri, Alexa), które rozumieją i
+                        przetwarzają język mówiony.</li>
+                </ul>
+
+                <h3>Wyzwania Deep Learning</h3>
+                <p>Mimo ogromnych sukcesów, Deep Learning wciąż napotyka na liczne wyzwania, które badacze starają się
+                    rozwiązywać:</p>
+                <ul>
+                    <li><strong>Wymagania obliczeniowe:</strong> Trenowanie dużych sieci neuronowych wymaga ogromnej
+                        mocy obliczeniowej oraz dostępu do dużych zbiorów danych, co ogranicza możliwości zastosowania
+                        DL w niektórych obszarach.</li>
+                    <li><strong>Wyjaśnialność modeli:</strong> Modele Deep Learning są często traktowane jako "czarne
+                        skrzynki", co oznacza, że trudno zrozumieć, dlaczego podjęły określoną decyzję. To szczególnie
+                        problematyczne w aplikacjach, gdzie wyjaśnialność jest kluczowa (np. w medycynie).</li>
+                    <li><strong>Overfitting:</strong> Modele DL mają tendencję do nadmiernego dopasowania się do danych
+                        treningowych, co sprawia, że mogą słabo generalizować na nowych, nieznanych danych.</li>
+                    <li><strong>Zanikający gradient:</strong> W głębokich sieciach neuronowych gradienty wstecznej
+                        propagacji mogą zanikać, co spowalnia proces uczenia. Techniki takie jak LSTM i Residual
+                        Networks (ResNets) pomagają rozwiązać ten problem.</li>
+                </ul>
+
+                <h3>Przyszłość Deep Learning</h3>
+                <p>Przyszłość Deep Learning rysuje się niezwykle obiecująco. Możemy spodziewać się dalszych postępów w
+                    różnych obszarach:</p>
+                <ul>
+                    <li><strong>Ulepszanie modeli:</strong> Wzrost mocy obliczeniowej oraz rozwój bardziej efektywnych
+                        architektur (np. transformerów) sprawią, że modele DL będą jeszcze bardziej potężne i zdolne do
+                        rozwiązywania coraz bardziej złożonych problemów.</li>
+                    <li><strong>Uczenie nienadzorowane i samo-uczące się:</strong> Obecnie większość modeli wymaga
+                        dużych ilości oznaczonych danych. Przyszłe badania skupią się na rozwijaniu modeli, które mogą
+                        uczyć się na podstawie surowych, nieoznakowanych danych.</li>
+                    <li><strong>Wyjaśnialność i interpretowalność:</strong> Rosnące zainteresowanie wyjaśnialnymi
+                        modelami AI sprawi, że coraz większy nacisk będzie kładziony na zrozumienie wewnętrznych
+                        mechanizmów działania sieci neuronowych.</li>
+                    <li><strong>Integracja z innymi dziedzinami:</strong> Deep Learning będzie coraz bardziej
+                        integrowany z innymi dziedzinami sztucznej inteligencji, takimi jak przetwarzanie języka
+                        naturalnego (NLP) i robotyka, co doprowadzi do powstania bardziej kompleksowych i inteligentnych
+                        systemów.</li>
+                </ul>
+
+                <h3>Podsumowanie</h3>
+                <p>Deep Learning to jedna z najbardziej obiecujących technologii współczesnej sztucznej inteligencji.
+                    Zastosowanie w dziedzinach takich jak medycyna, transport, rozpoznawanie mowy czy gry komputerowe, a
+                    także nieustanny rozwój nowych technik i architektur, sprawiają, że Deep Learning będzie kluczowym
+                    elementem rewolucji technologicznej nadchodzących lat. Choć wciąż napotyka na liczne wyzwania, jego
+                    potencjał do zmieniania świata jest niemal nieograniczony.</p>
+
+                <form class="signup-form" method="get" enctype="multipart/form-data" action="mailto:test.com">
+                    <p class="form-description">Jeśli chcesz dowiedzieć się więcej skontaktuj się ze mną</p>
+                    <div class="form-fields">
+                        <label for="name" class="visually-hidden">Imię</label>
+                        <input id="name" type="text" placeholder="Imię" class="form-input">
+                        <label for="subject" class="visually-hidden">Temat</label>
+                        <input id="subject" type="text" placeholder="temat" class="form-input">
+                        <label for="email" class="visually-hidden">Email</label>
+                        <input id="email" type="email" placeholder="Email" class="form-input">
+                        <label for="comment" class="visually-hidden">Komentarz</label>
+                        <textarea name="comment" id="comment" placeholder="Komentarz" class="form-input"></textarea>
+                    </div>
+                    <div class="form-submit">
+                        <input type="submit" value="Wyślij" class="submit-button">
+                    </div>
+                </form>
+    </main>
+    <footer class="main-footer">
+        <p>&copy; Dawid Koterwas 2024</p>
+    </footer>
+</body>
+
+</html>

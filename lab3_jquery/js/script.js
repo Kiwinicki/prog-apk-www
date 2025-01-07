@@ -1,6 +1,5 @@
 function getTheDate() {
     const today = new Date();
-    // Use `getFullYear()` for correct year and formatting with `padStart()`
     const formattedDate = `${(today.getMonth() + 1).toString().padStart(2, '0')} / ${today.getDate().toString().padStart(2, '0')} / ${(today.getFullYear() % 100).toString().padStart(2, '0')}`;
     document.getElementById("data").textContent = formattedDate;
 }
@@ -15,9 +14,9 @@ function stopClock() {
 }
 
 function startClock() {
-    stopClock(); // Clear previous timer if any
-    getTheDate(); // Show the date once
-    showTime(); // Start the time display
+    stopClock();
+    getTheDate();
+    showTime();
 }
 
 function showTime() {
@@ -27,13 +26,10 @@ function showTime() {
     const seconds = now.getSeconds().toString().padStart(2, '0');
     const isPM = hours >= 12;
 
-    // Adjust hours for 12-hour format
-    hours = (hours % 12) || 12; // Convert 0 to 12 for midnight
+    hours = (hours % 12) || 12;
     const timeValue = `${hours}:${minutes}:${seconds} ${isPM ? 'P.M.' : 'A.M.'}`;
 
     document.getElementById("zegarek").textContent = timeValue;
-
-    // Update the time every second
     timerID = setTimeout(showTime, 1000);
 }
 
@@ -47,19 +43,6 @@ function convert() {
     const convertedValue = (input * fromUnit) / toUnit;
 
     document.querySelector("#display").textContent = convertedValue || 0;
-}
-
-function addChar(character) {
-    const input = document.querySelector("#input");
-
-    if (character === '.' && !decimal) {
-        input.value += '.';
-        decimal = true;
-    } else if (character !== '.') {
-        input.value === "0" ? input.value = character : input.value += character;
-    }
-
-    convert();
 }
 
 function clearForm() {

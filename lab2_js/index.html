@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="pl" />
+    <meta name="Author" content="Dawid Koterwas" />
+    <title>Machine Learning</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body class="container" onload="startClock()">
+    <header class="main-header">
+        <h1 class="site-title"><a href="index.html">Machine Learning</a></h1>
+        <nav class="main-nav">
+            <ul class="menu">
+                <li><a href="./html/dl.html">Deep Learning</a></li>
+                <li><a href="./html/nlp.html">NLP</a></li>
+                <li><a href="./html/cv.html">Computer Vision</a></li>
+                <li><a href="./html/rl.html">Reinforcement Learning</a></li>
+                <li><a href="./html/etyka.html">Etyka AI</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="content">
+        <h2 class="section-title">Wprowadzenie</h2>
+        <p>Machine Learning (ML) to dziedzina sztucznej inteligencji, która skupia się na tworzeniu systemów uczących
+            się na podstawie danych. Zamiast być explicite programowane, systemy ML potrafią ulepszać swoje działanie
+            wraz z doświadczeniem. Ta technologia znajduje zastosowanie w wielu obszarach, od rekomendacji produktów po
+            autonomiczne pojazdy.</p>
+
+        <h3>Podstawy Machine Learning</h3>
+        <p>Machine Learning opiera się na kilku kluczowych koncepcjach:</p>
+
+        <ol>
+            <li><b>Dane</b>: Fundament każdego projektu ML.</li>
+            <li><b>Algorytmy</b>: Metody uczenia się z danych.</li>
+            <li><b>Trenowanie</b>: Proces, w którym model uczy się na podstawie danych.</li>
+            <li><b>Ewaluacja</b>: Ocena skuteczności modelu.</li>
+            <li><b>Wdrożenie</b>: Zastosowanie modelu w praktyce.</li>
+        </ol>
+        <p>Główne typy ML to uczenie nadzorowane, nienadzorowane i uczenie ze wzmocnieniem.</p>
+
+        <h3>Tradycyjne algorytmy Machine Learning</h3>
+        <p>Oprócz nowoczesnych technik deep learning, wiele "tradycyjnych" algorytmów ML nadal odgrywa kluczową rolę w
+            analizie danych i predykcji:
+        <ol>
+            <li>
+                <b>Regresja liniowa</b>: Podstawowy model do przewidywania wartości ciągłych, często używany jako punkt
+                odniesienia dla bardziej złożonych modeli.
+                <img src="https://miro.medium.com/v2/resize:fit:2000/1*N1-K-A43_98pYZ27fnupDA.jpeg"
+                    alt="linear regression">
+            </li>
+            <li>
+                <b>Maszyny wektorów nośnych (SVM)</b>: Wszechstronne algorytmy do klasyfikacji i regresji, skuteczne w
+                przestrzeniach wysokowymiarowych.
+                <img src="https://vitalflux.com/wp-content/uploads/2022/08/support-vector-machine-1.png" alt="svm">
+            </li>
+            <li>
+                <b>K najbliższych sąsiadów (KNN)</b>: Prosty, ale efektywny algorytm do klasyfikacji i regresji,
+                bazujący na podobieństwie między punktami danych.
+                <img src="https://miro.medium.com/v2/resize:fit:1400/0*ItVKiyx2F3ZU8zV5" alt="knn">
+            </li>
+            <li>
+                <b>Drzewa decyzyjne i lasy losowe (Decision trees & Random Forests)</b>: Modele oparte na drzewach,
+                świetne do interpretacji i radzenia sobie z nieliniowymi zależnościami. Lasy losowe to zespoły drzew
+                decyzyjnych, często osiągające wysoką dokładność.
+                <img src="https://miro.medium.com/v2/resize:fit:1400/1*kwCh2-U02xf-EWaTt3Xr4w.png" alt="decision tree">
+            </li>
+            <li>
+                <b>Naiwny klasyfikator Bayesowski (Naive Bayes)</b>: Probabilistyczny klasyfikator oparty na twierdzeniu
+                Bayesa, szczególnie efektywny w klasyfikacji tekstu.
+                <img src="https://miro.medium.com/v2/resize:fit:600/1*aFhOj7TdBIZir4keHMgHOw.png" alt="naive bayes">
+            </li>
+            <li>
+                <b>Grupowanie k-średnich (K-means clustering)</b>: Popularny algorytm uczenia nienadzorowanego do
+                grupowania podobnych punktów danych.
+                <img src="https://devopedia.org/images/article/370/5106.1641104893.png" alt="k-means">
+            </li>
+        </ol>
+        </p>
+        <p>Te "klasyczne" metody ML często są pierwszym wyborem ze względu na ich interpretowalność, efektywność
+            obliczeniową i skuteczność w wielu zastosowaniach.</p>
+
+        <h3>Deep Learning (DL)</h3>
+        <p>Deep Learning to podzbiór Machine Learning, wykorzystujący sztuczne sieci neuronowe z wieloma warstwami. DL
+            jest szczególnie skuteczne w zadaniach takich jak rozpoznawanie obrazów, przetwarzanie języka naturalnego
+            czy generowanie treści. Modele DL potrafią automatycznie uczyć się hierarchicznych reprezentacji danych.</p>
+
+        <h3>Computer Vision (CV)</h3>
+        <p>Computer Vision koncentruje się na tym, jak komputery mogą zyskać zdolność rozumienia i przetwarzania obrazów
+            i wideo. Obejmuje zadania takie jak rozpoznawanie obiektów, segmentacja obrazu czy śledzenie ruchu. CV
+            znajduje zastosowanie w autonomicznych pojazdach, diagnostyce medycznej i systemach monitoringu.</p>
+
+        <h3>Natural Language Processing (NLP)</h3>
+        <p>NLP to dziedzina ML zajmująca się interakcją między komputerami a ludzkim językiem. Obejmuje zadania takie
+            jak analiza sentymentu, tłumaczenie maszynowe, generowanie tekstu czy rozpoznawanie mowy. NLP jest kluczowe
+            dla asystentów głosowych, chatbotów i systemów analizy tekstu.</p>
+
+        <h3>Reinforcement Learning (RL)</h3>
+        <p>Reinforcement Learning to podejście w ML, gdzie agent uczy się podejmować decyzje poprzez interakcję ze
+            środowiskiem. Agent otrzymuje nagrody lub kary za swoje działania, co pozwala mu optymalizować strategię
+            działania. RL znajduje zastosowanie w grach, robotyce i optymalizacji procesów.</p>
+
+        <div>
+            <h3>Galeria przykładowych zastosowań:</span></h3>
+            <div class="gallery">
+                <img src="https://hughston.com/wp-content/uploads/2024/03/AI-in-Medicine.jpg" alt="">
+                <img src="https://www.wilmarinc.com/hs-fs/hubfs/AdobeStock_177874292-1.jpeg?width=1200&height=744&name=AdobeStock_177874292-1.jpeg"
+                    alt="">
+                <img src="https://www.valuecoders.com/blog/wp-content/uploads/2023/11/AI-programming.png" alt="">
+                <img src="https://incubator.ucf.edu/wp-content/uploads/2023/07/artificial-intelligence-new-technology-science-futuristic-abstract-human-brain-ai-technology-cpu-central-processor-unit-chipset-big-data-machine-learning-cyber-mind-domination-generative-ai-scaled-1-1500x1000.jpg"
+                    alt="">
+                <img src="https://d3g5ywftkpzr0e.cloudfront.net/wp-content/uploads/2023/07/13220529/Artificial-Intelligence-in-Indonesia-The-current-state-and-its-opportunities.jpeg"
+                    alt="">
+                <img src="https://www.europarl.europa.eu/resources/library/images/20230607PHT95601/20230607PHT95601_original.jpg"
+                    alt="">
+                <img src="https://kernel-technology.com/wp-content/uploads/2024/01/What-is-Artiificial-IntelligenceAI.webp"
+                    alt="">
+                <img src="https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/14202/production/_108243428_gettyimages-871148930.jpg"
+                    alt="">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmsWM4tFzLu-7Pq3AtDYpw-6W5kiqja--LWA&s"
+                    alt="">
+            </div>
+        </div>
+
+
+        <form class="signup-form" method="get" enctype="multipart/form-data" action="mailto:test.com">
+            <p class="form-description">Jeśli chcesz dowiedzieć się więcej skontaktuj się ze mną</p>
+            <div class="form-fields">
+                <label for="name" class="visually-hidden">Imię</label>
+                <input id="name" type="text" placeholder="Imię" class="form-input">
+                <label for="subject" class="visually-hidden">Temat</label>
+                <input id="subject" type="text" placeholder="temat" class="form-input">
+                <label for="email" class="visually-hidden">Email</label>
+                <input id="email" type="email" placeholder="Email" class="form-input">
+                <label for="comment" class="visually-hidden">Komentarz</label>
+                <textarea name="comment" id="comment" placeholder="Komentarz" class="form-input"></textarea>
+            </div>
+            <div class="form-submit">
+                <input type="submit" value="Wyślij" class="submit-button">
+            </div>
+        </form>
+
+        <h3>Oblewanie tekstu</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt minima tenetur, rem eius tempore
+            veritatis nostrum. Rem pariatur nulla ducimus animi, iure quo ad esse dignissimos ex quis provident nobis
+            saepe. Aliquid sapiente hic necessitatibus! Ad magni esse aperiam veniam distinctio saepe itaque odit,
+            aliquid commodi? Architecto magni numquam veniam, rerum in dolorum, consectetur laborum debitis consequuntur
+            aspernatur quae doloribus a? Vel dicta odit culpa error sint, expedita, itaque soluta necessitatibus fugit
+            suscipit ad, ipsa veniam dignissimos quasi tempore autem explicabo labore ipsam neque omnis voluptatibus cum
+            aliquam id sequi. Vel corrupti cumque distinctio eaque sint ducimus temporibus amet quaerat! Lorem ipsum
+            dolor sit, amet consectetur adipisicing elit. Aspernatur, provident atque unde assumenda labore, distinctio
+            rerum repudiandae mollitia quibusdam impedit quia a itaque consequuntur dolores adipisci illum dignissimos,
+            neque praesentium aliquid dolore vero voluptates in doloremque! Hic adipisci sequi sunt ex, vitae ad alias
+            et nobis impedit officia sit pariatur labore ratione! Eius est eos error in natus facilis quam inventore
+            quibusdam quisquam! Officia, consequatur dolorem ut tenetur vero enim ex libero maiores, consectetur, cum
+            ipsum veritatis perferendis eos quo sapiente. Sed molestias quia, maiores aperiam voluptatem numquam
+            dolorum. Quas tempore delectus consequuntur obcaecati necessitatibus ipsum, qui quae. Eligendi, qui!
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmsWM4tFzLu-7Pq3AtDYpw-6W5kiqja--LWA&s"
+                alt="" style="float: left; margin: 15px 20px 5px 0">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt minima tenetur, rem eius tempore
+            veritatis nostrum. Rem pariatur nulla ducimus animi, iure quo ad esse dignissimos ex quis provident nobis
+            saepe. Aliquid sapiente hic necessitatibus! Ad magni esse aperiam veniam distinctio saepe itaque odit,
+            aliquid commodi? Architecto magni numquam veniam, rerum in dolorum, consectetur laborum debitis consequuntur
+            aspernatur quae doloribus a? Vel dicta odit culpa error sint, expedita, itaque soluta necessitatibus fugit
+            suscipit ad, ipsa veniam dignissimos quasi tempore autem explicabo labore ipsam neque omnis voluptatibus cum
+            aliquam id sequi. Vel corrupti cumque distinctio eaque sint ducimus temporibus amet quaerat! Lorem ipsum
+            dolor sit, amet consectetur adipisicing elit. Aspernatur, provident atque unde assumenda labore, distinctio
+            rerum repudiandae mollitia quibusdam impedit quia a itaque consequuntur dolores adipisci illum dignissimos,
+            neque praesentium aliquid dolore vero voluptates in doloremque! Hic adipisci sequi sunt ex, vitae ad alias
+            et nobis impedit officia sit pariatur labore ratione! Eius est eos error in natus facilis quam inventore
+            quibusdam quisquam! Officia, consequatur dolorem ut tenetur vero enim ex libero maiores, consectetur, cum
+            ipsum veritatis perferendis eos quo sapiente. Sed molestias quia, maiores aperiam voluptatem numquam
+            dolorum. Quas tempore delectus consequuntur obcaecati necessitatibus ipsum, qui quae. Eligendi, qui!
+        </p>
+
+        <h3>Zegar</h3>
+        <div id="zegarek"></div>
+        <div id="data"></div>
+
+        <h3>Zmiana koloru tła strony</h3>
+        <form method="POST" name="background">
+            <input type="button" value="żółty" onclick="changeBackground('#FFF000')">
+            <input type="button" value="czarny" onclick="changeBackground('#000000')">
+            <input type="button" value="biały" onclick="changeBackground('#FFFFFF')">
+            <input type="button" value="zielony" onclick="changeBackground('#00FF00')">
+            <input type="button" value="niebieski" onclick="changeBackground('#0000FF')">
+            <input type="button" value="pomarańczowy" onclick="changeBackground('#FF8000')">
+            <input type="button" value="szary" onclick="changeBackground('#c0c0c0')">
+            <input type="button" value="czerwony" onclick="changeBackground('#FF0000')">
+        </form>
+
+        <h3>Konwerter jednostek</h3>
+        <form name="converterForm">
+            <input type="text" name="input" id="input" value="0" oninput="convert()">
+
+            <select name="measure1" id="measure1" onchange="convert()">
+                <option value="1">metry</option>
+                <option value="0.001">milimetry</option>
+                <option value="0.01">centymetry</option>
+                <option value="0.000621371">mile</option>
+                <option value="3.28084">stopy</option>
+            </select>
+
+            <span>na</span>
+
+            <select name="measure2" id="measure2" onchange="convert()">
+                <option value="1">metry</option>
+                <option value="0.001">milimetry</option>
+                <option value="0.01">centymetry</option>
+                <option value="0.000621371">mile</option>
+                <option value="3.28084">stopy</option>
+            </select>
+
+            <p>Przekonwertowana wersja: <span id="display">0</span></p>
+            <button type="button" onclick="clearForm()">Wyczyść</button>
+    </main>
+    <footer class="main-footer">
+        <p>&copy; Dawid Koterwas 2024</p>
+    </footer>
+</body>
+
+</html>
