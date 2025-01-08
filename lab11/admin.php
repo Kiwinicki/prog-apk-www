@@ -38,7 +38,7 @@ function ListaPodstron($conn) {
 
     $wynik = "<ul>";
     while ($row = $result->fetch_assoc()) {
-        $wynik .= "<li>ID: " . $row['id'] . " | Tytuł: " . $row['page_title'] .
+        $wynik .= "<li>ID: " . $row['id'] . " | Tytuł: " . htmlspecialchars($row['page_title'] ?? '') .
             " | <a href='?akcja=edytuj&id=" . $row['id'] . "'>Edytuj</a> | " .
             "<a href='?akcja=usun&id=" . $row['id'] . "'>Usuń</a></li>";
     }
@@ -61,9 +61,9 @@ function EdytujPodstrone($conn, $id) {
     }
 
     if (isset($_POST['edytuj_podstrone'])) {
-        $tytul = htmlspecialchars($_POST['tytul']);
-        $tresc = $_POST['page_content'];
-        $alias = htmlspecialchars($_POST['alias']);
+        $tytul = htmlspecialchars($_POST['tytul'] ?? '');
+        $tresc = $_POST['page_content'] ?? '';
+        $alias = htmlspecialchars($_POST['alias'] ?? '');
         $status = isset($_POST['status']) ? 1 : 0;
 
         $stmt = $conn->prepare("UPDATE page_list SET page_title = ?, page_content = ?, alias = ?, status = ? WHERE id = ? LIMIT 1");
@@ -80,13 +80,13 @@ function EdytujPodstrone($conn, $id) {
     <h2>Edytuj podstronę</h2>
     <form method='post'>
         <label for='tytul'>Tytuł:</label><br>
-        <input type='text' name='tytul' id='tytul' value='" . htmlspecialchars($podstrona['page_title']) . "'><br><br>
+        <input type='text' name='tytul' id='tytul' value='" . htmlspecialchars($podstrona['page_title'] ?? '') . "'><br><br>
 
         <label for='page_content'>Treść:</label><br>
-        <textarea name='page_content' id='page_content' rows='10' cols='50'>" . htmlspecialchars($podstrona['page_content']) . "</textarea><br><br>
+        <textarea name='page_content' id='page_content' rows='10' cols='50'>" . htmlspecialchars($podstrona['page_content'] ?? '') . "</textarea><br><br>
 
         <label for='alias'>Alias:</label><br>
-        <input type='text' name='alias' id='alias' value='" . htmlspecialchars($podstrona['alias']) . "'><br><br>
+        <input type='text' name='alias' id='alias' value='" . htmlspecialchars($podstrona['alias'] ?? '') . "'><br><br>
 
         <input type='checkbox' name='status' id='status' value='1' " . ($podstrona['status'] ? 'checked' : '') . ">
         <label for='status'>Aktywna</label><br><br>
@@ -99,9 +99,9 @@ function EdytujPodstrone($conn, $id) {
 
 function DodajNowaPodstrone($conn) {
     if (isset($_POST['dodaj_podstrone'])) {
-        $tytul = htmlspecialchars($_POST['page_title']);
-        $tresc = $_POST['page_content'];
-        $alias = htmlspecialchars($_POST['alias']);
+        $tytul = htmlspecialchars($_POST['page_title'] ?? '');
+        $tresc = $_POST['page_content'] ?? '';
+        $alias = htmlspecialchars($_POST['alias'] ?? '');
         $status = isset($_POST['status']) ? 1 : 0;
 
         $stmt = $conn->prepare("INSERT INTO page_list (page_title, page_content, alias, status) VALUES (?, ?, ?, ?)");
@@ -148,7 +148,7 @@ function UsunPodstrone($conn, $id) {
 function DodajKategorie($conn) {
     if (isset($_POST['dodaj_kategoria'])) {
         $matka = intval($_POST['matka']);
-        $nazwa = htmlspecialchars($_POST['nazwa']);
+        $nazwa = htmlspecialchars($_POST['nazwa'] ?? '');
 
         $stmt = $conn->prepare("INSERT INTO kategorie (matka, nazwa) VALUES (?, ?)");
         $stmt->bind_param("is", $matka, $nazwa);
@@ -199,7 +199,7 @@ function EdytujKategorie($conn, $id) {
 
     if (isset($_POST['edytuj_kategoria'])) {
         $matka = intval($_POST['matka']);
-        $nazwa = htmlspecialchars($_POST['nazwa']);
+        $nazwa = htmlspecialchars($_POST['nazwa'] ?? '');
 
         $stmt = $conn->prepare("UPDATE kategorie SET matka = ?, nazwa = ? WHERE id = ? LIMIT 1");
         $stmt->bind_param("isi", $matka, $nazwa, $id);
@@ -218,7 +218,7 @@ function EdytujKategorie($conn, $id) {
     <input type='number' name='matka' id='matka' value='" . $kategoria['matka'] . "'><br><br>
 
     <label for='nazwa'>Nazwa:</label><br>
-    <input type='text' name='nazwa' id='nazwa' value='" . htmlspecialchars($kategoria['nazwa']) . "'><br><br>
+    <input type='text' name='nazwa' id='nazwa' value='" . htmlspecialchars($kategoria['nazwa'] ?? '') . "'><br><br>
 
     <input type='submit' name='edytuj_kategoria' value='Zapisz zmiany'>
     </form>";
@@ -236,7 +236,7 @@ function PokazKategorie($conn) {
         while ($row = $result->fetch_assoc()) {
              $wynik .= "<li>" . str_repeat("   ", $level) . 
              "ID: " . $row['id'] . " | " .
-                "Nazwa: " . htmlspecialchars($row['nazwa']) . " | " .
+                "Nazwa: " . htmlspecialchars($row['nazwa'] ?? '') . " | " .
                 "Matka: " . $row['matka'] . " | " .
                 "<a href='?akcja=kategorie_edytuj&id=" . $row['id'] . "'>Edytuj</a> | " .
                 "<a href='?akcja=kategorie_usun&id=" . $row['id'] . "'>Usuń</a>";
@@ -256,15 +256,15 @@ function PokazKategorie($conn) {
 
 function DodajProdukt($conn) {
     if (isset($_POST['dodaj_produkt'])) {
-        $tytul = htmlspecialchars($_POST['tytul']);
-        $opis = htmlspecialchars($_POST['opis']);
+        $tytul = htmlspecialchars($_POST['tytul'] ?? '');
+        $opis = htmlspecialchars($_POST['opis'] ?? '');
         $cena_netto = floatval($_POST['cena_netto']);
         $podatek_vat = floatval($_POST['podatek_vat']);
         $ilosc_sztuk = intval($_POST['ilosc_sztuk']);
-        $status_dostepnosci = htmlspecialchars($_POST['status_dostepnosci']);
+        $status_dostepnosci = htmlspecialchars($_POST['status_dostepnosci'] ?? '');
         $kategoria_id = intval($_POST['kategoria_id']);
-        $gabaryt = htmlspecialchars($_POST['gabaryt']);
-          $zdjecie = htmlspecialchars($_POST['zdjecie']);
+        $gabaryt = htmlspecialchars($_POST['gabaryt'] ?? '');
+          $zdjecie = htmlspecialchars($_POST['zdjecie'] ?? '');
 
 
        $stmt = $conn->prepare("INSERT INTO produkty (tytul, opis, cena_netto, podatek_vat, ilosc_sztuk, status_dostepnosci, kategoria_id, gabaryt, zdjecie) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -342,15 +342,15 @@ function EdytujProdukt($conn, $id) {
     }
 
     if (isset($_POST['edytuj_produkt'])) {
-         $tytul = htmlspecialchars($_POST['tytul']);
-        $opis = htmlspecialchars($_POST['opis']);
+         $tytul = htmlspecialchars($_POST['tytul'] ?? '');
+        $opis = htmlspecialchars($_POST['opis'] ?? '');
         $cena_netto = floatval($_POST['cena_netto']);
         $podatek_vat = floatval($_POST['podatek_vat']);
         $ilosc_sztuk = intval($_POST['ilosc_sztuk']);
-        $status_dostepnosci = htmlspecialchars($_POST['status_dostepnosci']);
+        $status_dostepnosci = htmlspecialchars($_POST['status_dostepnosci'] ?? '');
         $kategoria_id = intval($_POST['kategoria_id']);
-        $gabaryt = htmlspecialchars($_POST['gabaryt']);
-           $zdjecie = htmlspecialchars($_POST['zdjecie']);
+        $gabaryt = htmlspecialchars($_POST['gabaryt'] ?? '');
+           $zdjecie = htmlspecialchars($_POST['zdjecie'] ?? '');
 
 
        $stmt = $conn->prepare("UPDATE produkty SET tytul = ?, opis = ?, cena_netto = ?, podatek_vat = ?, ilosc_sztuk = ?, status_dostepnosci = ?, kategoria_id = ?, gabaryt = ?, zdjecie = ? WHERE id = ? LIMIT 1");
@@ -367,10 +367,10 @@ function EdytujProdukt($conn, $id) {
     <h2>Edytuj produkt</h2>
     <form method='post'>
         <label for='tytul'>Tytuł:</label><br>
-        <input type='text' name='tytul' id='tytul' value='" . htmlspecialchars($produkt['tytul']) . "'><br><br>
+        <input type='text' name='tytul' id='tytul' value='" . htmlspecialchars($produkt['tytul'] ?? '') . "'><br><br>
 
         <label for='opis'>Opis:</label><br>
-        <textarea name='opis' id='opis' rows='5' cols='50'>" . htmlspecialchars($produkt['opis']) . "</textarea><br><br>
+        <textarea name='opis' id='opis' rows='5' cols='50'>" . htmlspecialchars($produkt['opis'] ?? '') . "</textarea><br><br>
 
         <label for='cena_netto'>Cena netto:</label><br>
         <input type='number' name='cena_netto' id='cena_netto' step='0.01' value='" . $produkt['cena_netto'] . "'><br><br>
@@ -393,10 +393,10 @@ function EdytujProdukt($conn, $id) {
              </select><br><br>
              
               <label for='gabaryt'>Gabaryt:</label><br>
-             <input type='text' name='gabaryt' id='gabaryt' value='" . htmlspecialchars($produkt['gabaryt']) . "'><br><br>
+             <input type='text' name='gabaryt' id='gabaryt' value='" . htmlspecialchars($produkt['gabaryt'] ?? '') . "'><br><br>
                 
           <label for='zdjecie'>Zdjęcie (Link):</label><br>
-             <input type='text' name='zdjecie' id='zdjecie' value='" . htmlspecialchars($produkt['zdjecie']) . "'><br><br>
+             <input type='text' name='zdjecie' id='zdjecie' value='" . htmlspecialchars($produkt['zdjecie'] ?? '') . "'><br><br>
         
         <input type='submit' name='edytuj_produkt' value='Zapisz zmiany'>
     </form>";
@@ -412,10 +412,10 @@ function PokazProdukty($conn) {
      $wynik = "<h2>Lista Produktów</h2><ul>";
       while ($row = $result->fetch_assoc()) {
         $wynik .= "<li>ID: " . $row['id'] . " | " .
-            "Tytuł: " . htmlspecialchars($row['tytul']) . " | " .
+            "Tytuł: " . htmlspecialchars($row['tytul'] ?? '') . " | " .
             "Cena: " . $row['cena_netto'] . " | " .
-            "Kategoria: " . htmlspecialchars($row['kategoria_nazwa']) . " | " .
-            "Status: " . htmlspecialchars($row['status_dostepnosci']) . " | " .
+            "Kategoria: " . htmlspecialchars($row['kategoria_nazwa'] ?? '') . " | " .
+            "Status: " . htmlspecialchars($row['status_dostepnosci'] ?? '') . " | " .
              "<a href='?akcja=produkt_edytuj&id=" . $row['id'] . "'>Edytuj</a> | " .
                 "<a href='?akcja=produkt_usun&id=" . $row['id'] . "'>Usuń</a></li>";
     }
@@ -431,7 +431,7 @@ function PobierzKategorieZListy($conn){
     }
         $kategorie = "";
       while ($row = $result->fetch_assoc()) {
-          $kategorie .= "<option value='" . $row['id'] . "'>" . htmlspecialchars($row['nazwa']) . "</option>";
+          $kategorie .= "<option value='" . $row['id'] . "'>" . htmlspecialchars($row['nazwa'] ?? '') . "</option>";
       }
        return $kategorie;
 }
