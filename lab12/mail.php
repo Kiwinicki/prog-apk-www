@@ -1,5 +1,5 @@
 <?php
-
+include_once 'helpers.php';
 function PokazKontakt()
 {
     echo <<<HTML
@@ -70,3 +70,4 @@ function PrzypomnijHaslo($adminEmail)
 
     echo '[haslo_przypomniane]';
 }
+?>
