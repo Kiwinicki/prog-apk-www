@@ -32,3 +32,18 @@ function resetTimer() {
 }
 
 updateDisplay();
+
+let timerID = null;
+
+function stopClock() {
+    if (timerID) {
+        clearTimeout(timerID);
+        timerID = null;
+    }
+}
+
+function startClock() {
+    stopClock();
+    getTheDate();
+    showTime();
+}

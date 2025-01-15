@@ -12,8 +12,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-
-
 // Function to fetch all categories
 function fetchAllCategories($conn) {
     $query = "SELECT id, nazwa, matka FROM kategorie";
@@ -36,8 +34,6 @@ function fetchAllProducts($conn) {
     }
     return $products;
 }
-
-
 // Function to add an item to the cart
 function addToCard($conn, $id_prod, $ile_sztuk, $wielkosc) {
     if (!isset($_SESSION['count'])) {
@@ -59,7 +55,6 @@ function addToCard($conn, $id_prod, $ile_sztuk, $wielkosc) {
     $_SESSION[$nr.'_3'] = $prod[$nr]['wielkosc'];
     $_SESSION[$nr.'_4'] = $prod[$nr]['data'];
 }
-
 function updateCartItemQuantity($conn, $cartItemId, $newQuantity) {
   if (isset($_SESSION[$cartItemId . '_2'])) {
      $_SESSION[$cartItemId . '_2'] = $newQuantity;
