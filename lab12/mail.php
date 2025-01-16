@@ -1,73 +1,61 @@
 <?php
-include_once 'helpers.php';
-function PokazKontakt()
+/**
+ * Displays the contact form.
+ */
+function showContact()
 {
     echo <<<HTML
 <form method="POST" action="" class="signup-form">
     <div class="form-fields">
         <label for="email" class="visually-hidden">Email:</label>
         <input type="email" name="email" id="email" required class="form-input">
-        <label for="temat" class="visually-hidden">Temat:</label>
-        <input type="text" name="temat" id="temat" required class="form-input">
-        <label for="tresc" class="visually-hidden">Treść wiadomości:</label>
-        <textarea name="tresc" id="tresc" required class="form-input"></textarea>
+        <label for="subject" class="visually-hidden">Temat:</label>
+        <input type="text" name="subject" id="subject" required class="form-input">
+        <label for="content" class="visually-hidden">Zawartość:</label>
+        <textarea name="content" id="content" required class="form-input"></textarea>
         <button type="submit" name="wyslij" class="submit-button">Wyślij</button>
     </div>
 </form>
 HTML;
 }
 
-function WyslijMailKontakt($odbiorca)
+/**
+ * Sends a contact form email.
+ *
+ * @param string $recipient The email address to send the message to.
+ */
+function sendContactEmail($recipient)
 {
-    if (isset($_POST['wyslij'])) {
-        $temat = $_POST['temat'];
-        $tresc = $_POST['tresc'];
-        $email = $_POST['email'];
+    if (isset($_POST['wyslij'])) { // If the "send" button was clicked
+        $subject = $_POST['subject']; // Get the subject from the form
+        $messageBody = $_POST['content']; // Get the message from the form
+        $senderEmail = $_POST['email']; // Get the sender's email from the form
 
-        if (empty($temat) || empty($tresc) || empty($email)) {
-            echo '[nie_wypelniles_pola]';
-            return;
+        // Check if any of the required fields are empty
+        if (empty($subject) || empty($messageBody) || empty($senderEmail)) {
+            echo '[not_all_fields_filled]'; // Output a message indicating fields are missing
+            return; // Stop execution of the function
         }
 
-        $mail['subject'] = $temat;
-        $mail['body'] = $tresc;
-        $mail['sender'] = $email;
-        $mail['reciptient'] = $odbiorca;
+        $mail['subject'] = $subject; // Set the subject for the email
+        $mail['body'] = $messageBody; // Set the message body for the email
+        $mail['sender'] = $senderEmail; // Set the sender's email for the email
+        $mail['recipient'] = $recipient; // Set the recipient email
 
-        $header = "From: Formularz kontaktowy <" . $mail['sender'] . ">\n";
-        $header .= "MIME-Version: 1.0\n";
-        $header .= "Content-Type: text/plain; charset=utf-8\n";
-        $header .= "Content-Transfer-Encoding: 8bit\n";
-        $header .= "X-Sender: <" . $mail['sender'] . ">\n";
-        $header .= "X-Mailer: PHP/" . phpversion() . "\n";
-        $header .= "X-Priority: 3\n";
-        $header .= "Return-Path: <" . $mail['sender'] . ">\n";
+        // Construct the email headers
+        $header = "From: Contact Form <" . $mail['sender'] . ">\n"; // Set the "From" header
+        $header .= "MIME-Version: 1.0\n"; // Set the MIME version
+        $header .= "Content-Type: text/plain; charset=utf-8\n"; // Set the content type and charset
+        $header .= "Content-Transfer-Encoding: 8bit\n"; // Set the content transfer encoding
+        $header .= "X-Sender: <" . $mail['sender'] . ">\n"; // Set the X-Sender header
+        $header .= "X-Mailer: PHP/" . phpversion() . "\n"; // Set the X-Mailer header
+        $header .= "X-Priority: 3\n"; // Set the priority
+        $header .= "Return-Path: <" . $mail['sender'] . ">\n"; // Set the return path
 
-        mail($mail['reciptient'], $mail['subject'], $mail['body'], $header);
+        // Attempt to send the email
+        mail($mail['recipient'], $mail['subject'], $mail['body'], $header);
 
-        echo '[wiadomosc_wyslana]';
+        echo '[message_sent]'; // Output a success message
     }
-}
-
-function PrzypomnijHaslo($adminEmail)
-{
-    $haslo = 'noweHaslo123';
-
-    $temat = "Przypomnienie hasła";
-    $tresc = "Twoje hasło do panelu admina to: " . $haslo;
-    $email = "admin@twojadomena.com";
-
-    $header = "From: Przypomnienie hasła <" . $email . ">\n";
-    $header .= "MIME-Version: 1.0\n";
-    $header .= "Content-Type: text/plain; charset=utf-8\n";
-    $header .= "Content-Transfer-Encoding: 8bit\n";
-    $header .= "X-Sender: <" . $email . ">\n";
-    $header .= "X-Mailer: PHP/" . phpversion() . "\n";
-    $header .= "X-Priority: 3\n";
-    $header .= "Return-Path: <" . $email . ">\n";
-
-    mail($adminEmail, $temat, $tresc, $header);
-
-    echo '[haslo_przypomniane]';
 }
 ?>
